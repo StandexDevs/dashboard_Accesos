@@ -1,0 +1,126 @@
+CRITICAL - 2023-07-05 10:25:35 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '1')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-07-05 10:25:38 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '4')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-07-05 10:25:41 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '5')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-07-05 10:25:51 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '4')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-07-05 10:26:20 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '9')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-07-05 10:26:27 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '10')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-07-05 10:26:32 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '21')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-07-05 10:26:37 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '22')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-07-05 10:32:24 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '1')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-07-05 10:32:33 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '2')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-07-05 10:36:27 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '3')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-07-05 11:09:41 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '1')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-07-05 11:09:47 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '2')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-07-05 11:09:50 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '3')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-07-05 11:09:58 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '4')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-07-05 11:09:59 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '5')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-07-05 11:10:03 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '5')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-07-05 11:40:54 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '3')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

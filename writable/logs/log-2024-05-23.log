@@ -1,0 +1,245 @@
+CRITICAL - 2024-05-23 02:03:14 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 02:03:19 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 02:03:20 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 102)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->createUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 02:03:20 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 02:03:49 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 102)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->createUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 02:03:49 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 02:03:49 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 02:03:49 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 102)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->createUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 02:03:50 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 02:03:50 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 102)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->createUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 02:03:50 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 02:03:50 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 102)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->createUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 02:03:51 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 02:03:51 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 102)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->createUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:45:09 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:45:15 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:45:17 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:45:21 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:45:22 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:45:22 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 102)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->createUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:45:36 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 102)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->createUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:45:36 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:45:45 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:45:45 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 102)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->createUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:46:39 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:46:39 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:46:40 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:46:40 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 102)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->createUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:46:43 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 102)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->createUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:46:43 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:46:47 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 102)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->createUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:46:47 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:46:49 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:46:49 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 66)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->SessionUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2024-05-23 04:46:49 --> Undefined variable $config
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/home/eventodig...', 102)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->createUser()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

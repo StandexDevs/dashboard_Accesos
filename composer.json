@@ -1,0 +1,19 @@
+{
+    "name": "programadortech/control-accesos",
+    "authors": [
+        {
+            "name": "ook-gz",
+            "email": "desarrollo@standex.com.mx"
+        }
+    ],
+    "require": {
+        "benedmunds/codeigniter-ion-auth": "4.x-dev"
+    },
+    "minimum-stability": "dev",
+    "repositories": {
+        "ionAuth": {
+            "type": "vcs",
+            "url": "git@github.com:benedmunds/CodeIgniter-Ion-Auth.git"
+        }
+    }
+}

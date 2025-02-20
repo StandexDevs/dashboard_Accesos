@@ -1,0 +1,49 @@
+CRITICAL - 2023-06-01 09:34:05 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '06575348')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2023-06-01 09:53:38 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 09:53:45 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 09:53:51 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 09:54:37 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 09:54:42 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 09:55:52 --> Column 'categoria' cannot be null
+CRITICAL - 2023-06-01 10:09:03 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, '30')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2023-06-01 10:09:24 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:09:37 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:10:08 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:10:16 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:10:22 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:12:23 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:12:49 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:12:58 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:14:32 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:14:43 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:14:49 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:14:54 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:15:21 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:22:20 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:22:24 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:22:39 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:25:33 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:28:46 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:49:16 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:49:23 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:55:45 --> Column 'categoria' cannot be null
+ERROR - 2023-06-01 10:55:58 --> Column 'categoria' cannot be null
+CRITICAL - 2023-06-01 13:01:18 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(185): App\Libraries\vCard->__construct(false, 'https://beyondw...')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

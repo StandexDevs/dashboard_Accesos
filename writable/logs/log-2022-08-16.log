@@ -1,0 +1,77 @@
+CRITICAL - 2022-08-16 13:41:01 --> The framework needs the following extension(s) installed and loaded: curl, intl, mbstring.
+#0 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('curl, intl, mbs...')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 /home/eventodigital/public_html/api_controlAccesos/public/index.php(28): require('/home/eventodig...')
+#4 {main}
+CRITICAL - 2022-08-16 13:41:01 --> The framework needs the following extension(s) installed and loaded: curl, intl, mbstring.
+#0 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('curl, intl, mbs...')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 /home/eventodigital/public_html/api_controlAccesos/public/index.php(28): require('/home/eventodig...')
+#4 {main}
+CRITICAL - 2022-08-16 13:41:10 --> The framework needs the following extension(s) installed and loaded: curl, intl, mbstring.
+#0 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('curl, intl, mbs...')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 /home/eventodigital/public_html/api_controlAccesos/public/index.php(28): require('/home/eventodig...')
+#4 {main}
+CRITICAL - 2022-08-16 13:41:11 --> The framework needs the following extension(s) installed and loaded: curl, intl, mbstring.
+#0 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('curl, intl, mbs...')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 /home/eventodigital/public_html/api_controlAccesos/public/index.php(28): require('/home/eventodig...')
+#4 {main}
+CRITICAL - 2022-08-16 13:41:15 --> The framework needs the following extension(s) installed and loaded: curl, intl, mbstring.
+#0 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('curl, intl, mbs...')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 /home/eventodigital/public_html/api_controlAccesos/public/index.php(28): require('/home/eventodig...')
+#4 {main}
+CRITICAL - 2022-08-16 13:41:35 --> The framework needs the following extension(s) installed and loaded: curl, intl, mbstring.
+#0 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('curl, intl, mbs...')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 /home/eventodigital/public_html/api_controlAccesos/public/index.php(28): require('/home/eventodig...')
+#4 {main}
+CRITICAL - 2022-08-16 13:41:35 --> The framework needs the following extension(s) installed and loaded: curl, intl, mbstring.
+#0 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('curl, intl, mbs...')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 /home/eventodigital/public_html/api_controlAccesos/public/index.php(28): require('/home/eventodig...')
+#4 {main}
+CRITICAL - 2022-08-16 10:11:56 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(175): App\Libraries\vCard->__construct(false, '000001\tAcceso p...')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-08-16 10:12:08 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(175): App\Libraries\vCard->__construct(false, '000001\tAcceso p...')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-08-16 10:12:12 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(175): App\Libraries\vCard->__construct(false, '000001\tAcceso p...')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-08-16 10:12:40 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(175): App\Libraries\vCard->__construct(false, '000001\tAcceso p...')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-08-16 10:12:47 --> Class 'App\Libraries\Exception' not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(175): App\Libraries\vCard->__construct(false, '000002\tAcceso p...')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

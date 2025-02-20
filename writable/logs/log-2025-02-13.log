@@ -1,0 +1,12 @@
+CRITICAL - 2025-02-13 12:48:46 --> Class "App\Libraries\Exception" not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(229): App\Libraries\vCard->__construct(false, 'ANEAS2024')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2025-02-13 14:35:42 --> Column 'idUser' cannot be null
+ERROR - 2025-02-13 14:38:25 --> Column 'idUser' cannot be null
+ERROR - 2025-02-13 14:39:45 --> Column 'idUser' cannot be null
+ERROR - 2025-02-13 14:51:28 --> Column 'idUser' cannot be null
+ERROR - 2025-02-13 17:01:36 --> Column 'idUser' cannot be null

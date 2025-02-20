@@ -1,0 +1,58 @@
+CRITICAL - 2024-11-11 08:24:28 --> Undefined array key 0
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(158): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', '/home/eventodig...', 158)
+#1 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(195): App\Controllers\RestController->OutputvCard(Object(App\Libraries\vCard))
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#4 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2024-11-11 08:25:22 --> Undefined array key 0
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(158): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', '/home/eventodig...', 158)
+#1 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(195): App\Controllers\RestController->OutputvCard(Object(App\Libraries\vCard))
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#4 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2024-11-11 08:29:34 --> Undefined array key 0
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(158): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', '/home/eventodig...', 158)
+#1 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(195): App\Controllers\RestController->OutputvCard(Object(App\Libraries\vCard))
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#4 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2024-11-11 08:30:00 --> Array to string conversion
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Libraries/Vcard.php(493): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', '/home/eventodig...', 493)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/Database/MySQLi/Connection.php(329): App\Libraries\vCard->__toString()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/Database/BaseConnection.php(1226): CodeIgniter\Database\MySQLi\Connection->_escapeString(Object(App\Libraries\vCard))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/Database/BaseConnection.php(1198): CodeIgniter\Database\BaseConnection->escapeString(Object(App\Libraries\vCard))
+#4 /home/eventodigital/public_html/api_controlAccesos/system/Database/Query.php(306): CodeIgniter\Database\BaseConnection->escape(Object(App\Libraries\vCard))
+#5 /home/eventodigital/public_html/api_controlAccesos/system/Database/Query.php(293): CodeIgniter\Database\Query->matchNamedBinds('INSERT INTO `in...', Array)
+#6 /home/eventodigital/public_html/api_controlAccesos/system/Database/Query.php(150): CodeIgniter\Database\Query->compileBinds()
+#7 /home/eventodigital/public_html/api_controlAccesos/system/Database/BaseConnection.php(598): CodeIgniter\Database\Query->getQuery()
+#8 /home/eventodigital/public_html/api_controlAccesos/system/Database/BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `in...', Array, false)
+#9 /home/eventodigital/public_html/api_controlAccesos/system/Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#10 /home/eventodigital/public_html/api_controlAccesos/system/BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#11 /home/eventodigital/public_html/api_controlAccesos/system/Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#12 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(250): CodeIgniter\Model->insert(Array)
+#13 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#14 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#15 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#16 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#17 {main}
+CRITICAL - 2024-11-11 08:31:23 --> Undefined array key 0
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(158): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', '/home/eventodig...', 158)
+#1 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(195): App\Controllers\RestController->OutputvCard(Object(App\Libraries\vCard))
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#4 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2024-11-11 08:32:32 --> Class "App\Libraries\Exception" not found
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(188): App\Libraries\vCard->__construct(false, '01161210')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

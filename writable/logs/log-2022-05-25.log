@@ -1,0 +1,9 @@
+CRITICAL - 2022-05-25 16:43:38 --> vCard: invalid vCard
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/OutputController.php(48): vCard->__construct(false, 'BEGIN:VCARD\n   ...')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/Router/Router.php(518): include_once('/home/eventodig...')
+#2 /home/eventodigital/public_html/api_controlAccesos/system/Router/Router.php(175): CodeIgniter\Router\Router->autoRoute('OutputControlle...')
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(726): CodeIgniter\Router\Router->handle('OutputControlle...')
+#4 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#5 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

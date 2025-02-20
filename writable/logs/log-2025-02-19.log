@@ -1,0 +1,312 @@
+CRITICAL - 2025-02-19 12:19:55 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 12:35:39 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 12:35:39 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 12:39:14 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 12:39:15 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:23:27 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:23:27 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:25:05 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:25:06 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:26:00 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:26:00 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:26:37 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:26:37 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:27:49 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:27:49 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:27:54 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:27:55 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:31:02 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:31:03 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:32:00 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:32:00 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:32:52 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:32:52 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:34:51 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:34:52 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:37:03 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:37:04 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:37:39 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:37:39 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:38:06 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:38:06 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:39:37 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:39:37 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:41:42 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 13:41:42 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 15:09:07 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 15:09:07 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 16:46:36 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2025-02-19 16:46:37 --> Class "App\Controllers\Controller" not found
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(518): include_once()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dashboard/image...')
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dashboard/image...')
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}

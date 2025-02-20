@@ -1,0 +1,55 @@
+CRITICAL - 2022-03-31 11:20:06 --> Too few arguments to function CodeIgniter\Database\BaseConnection::getFieldNames(), 0 passed in /home/eventodigital/public_html/api_controlAccesos/system/Model.php on line 726 and exactly 1 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/system/Model.php(726): CodeIgniter\Database\BaseConnection->getFieldNames()
+#1 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(44): CodeIgniter\Model->__call('getFieldNames', Array)
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#4 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-03-31 12:22:01 --> syntax error, unexpected '$barcode' (T_VARIABLE), expecting ')'
+#0 /home/eventodigital/public_html/api_controlAccesos/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('/home/eventodig...')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#5 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-03-31 12:22:48 --> syntax error, unexpected '$barcode' (T_VARIABLE), expecting ')'
+#0 /home/eventodigital/public_html/api_controlAccesos/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('/home/eventodig...')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#5 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-03-31 11:24:09 --> Call to a member function query() on null
+#0 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-03-31 11:24:17 --> Call to a member function query() on null
+#0 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-03-31 11:24:57 --> Call to undefined method App\Models\RestModel::getNumRows
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(45): CodeIgniter\Model->__call('getNumRows', Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-31 11:27:40 --> Call to a member function getNumRows() on array
+#0 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->create()
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+ERROR - 2022-03-31 12:51:15 --> Column 'type' cannot be null
+ERROR - 2022-03-31 12:51:41 --> Column 'type' cannot be null

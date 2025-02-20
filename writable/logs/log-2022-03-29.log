@@ -1,0 +1,178 @@
+CRITICAL - 2022-03-29 09:43:02 --> syntax error, unexpected ')', expecting ';'
+#0 /home/eventodigital/public_html/api_controlAccesos/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('/home/eventodig...')
+#1 /home/eventodigital/public_html/api_controlAccesos/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#5 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-03-29 13:45:10 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 29 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(29): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 13:49:03 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 64 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(64): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->show('6')
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:38:44 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:38:48 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:39:37 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:39:47 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:40:16 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:40:18 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:40:18 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:40:18 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:40:19 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:40:19 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:40:19 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:40:19 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:40:19 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:40:20 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:40:20 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:40:20 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:40:20 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:40:21 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:40:21 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:40:24 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:40:25 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:40:25 --> Too few arguments to function App\Controllers\RestController::genericResponse(), 1 passed in /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php on line 22 and exactly 3 expected
+#0 /home/eventodigital/public_html/api_controlAccesos/app/Controllers/RestController.php(22): App\Controllers\RestController->genericResponse(Array)
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->index()
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#3 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

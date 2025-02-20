@@ -1,0 +1,18 @@
+ERROR - 2025-02-14 08:58:25 --> Column 'idUser' cannot be null
+ERROR - 2025-02-14 08:59:07 --> Column 'idUser' cannot be null
+ERROR - 2025-02-14 08:59:47 --> Column 'idUser' cannot be null
+ERROR - 2025-02-14 09:30:56 --> Column 'idUser' cannot be null
+ERROR - 2025-02-14 09:35:00 --> Column 'nombreCompleto' cannot be null
+ERROR - 2025-02-14 09:35:51 --> Column 'nombreCompleto' cannot be null
+ERROR - 2025-02-14 09:36:30 --> Column 'nombreCompleto' cannot be null
+ERROR - 2025-02-14 09:37:08 --> Column 'nombreCompleto' cannot be null
+ERROR - 2025-02-14 09:37:44 --> Column 'nombreCompleto' cannot be null
+ERROR - 2025-02-14 09:38:13 --> Column 'nombreCompleto' cannot be null
+ERROR - 2025-02-14 09:39:47 --> Column 'nombreCompleto' cannot be null
+ERROR - 2025-02-14 09:41:29 --> Column 'nombreCompleto' cannot be null
+CRITICAL - 2025-02-14 10:32:01 --> Class "App\Controllers\UserModel" not found
+#0 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(832): App\Controllers\RestController->crearRegistroTorniquete()
+#1 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RestController))
+#2 /home/eventodigital/public_html/api_controlAccesos/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/eventodigital/public_html/api_controlAccesos/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
