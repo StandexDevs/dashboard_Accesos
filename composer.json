@@ -7,7 +7,9 @@
         }
     ],
     "require": {
-        "benedmunds/codeigniter-ion-auth": "4.x-dev"
+        "benedmunds/codeigniter-ion-auth": "4.x-dev",
+        "phpoffice/phpspreadsheet": "dev-master",
+        "hermawan/codeigniter4-datatables": "dev-master"
     },
     "minimum-stability": "dev",
     "repositories": {

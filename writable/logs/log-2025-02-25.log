@@ -1,0 +1,27 @@
+CRITICAL - 2025-02-25 09:31:59 --> Call to undefined function echo_uri()
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\View\View.php(210): include()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Common.php(1089): CodeIgniter\View\View->render('dashboard/index', Array, true)
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\app\Controllers\Dashboard.php(23): view('dashboard/index', Array)
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(832): App\Controllers\Dashboard->index()
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#6 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-02-25 10:11:19 --> Undefined variable $data
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\app\Controllers\Dashboard.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Progra...', 21)
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(832): App\Controllers\Dashboard->index()
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2025-02-25 10:34:03 --> Call to undefined function base_uri()
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\View\View.php(210): include()
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\Common.php(1089): CodeIgniter\View\View->render('dashboard/index', Array, true)
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\app\Controllers\Dashboard.php(21): view('dashboard/index')
+#4 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(832): App\Controllers\Dashboard->index()
+#5 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#6 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

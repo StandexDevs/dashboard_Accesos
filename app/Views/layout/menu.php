@@ -16,17 +16,13 @@
     <!-- Favicon icon -->
     <!-- Vectormap -->
     <link href="<?= base_url('assets/mophy/vendor/jqvmap/css/jqvmap.min.css'); ?>" rel="stylesheet">
-    <link href="<?= base_url('assets/mophy/vendor/bootstrap-select/dist/css/bootstrap-select.min.css'); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css'); ?>" rel="stylesheet">
 	<link href="<?= base_url('assets/mophy/css/style.css'); ?>" rel="stylesheet">
 	<link href="<?= base_url('assets/mophy/vendor/owl-carousel/owl.carousel.css'); ?>" rel="stylesheet">
 
-
-    <link href="./vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="./vendor/chartist/css/chartist.min.css">
-    <link href="./vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
-    <link href="./css/style.css" rel="stylesheet">
-	<link href="./vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
-	
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
 <body>
 
@@ -135,8 +131,7 @@
                 </ul>
 				
 				<div class="copyright">
-					<p><strong>Mophy Payment Admin Dashboard</strong> © 2022 All Rights Reserved</p>
-					<p>Made with <span class="heart"></span> by DexignZone</p>
+					<p><strong>Tech meetings</strong> © 2025 All Rights Reserved</p>
 				</div>
 			</div>
         </div>
@@ -169,7 +164,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="http://dexignzone.com/" target="_blank">DexignZone</a> 2022</p>
+                <p>Copyright © Designed &amp; Developed by <a href="https://grupostandex.com.mx/" target="_blank">Grupo Standex</a> 2025</p>
             </div>
         </div>
         <!--**********************************
@@ -203,7 +198,9 @@
 	<script src="<?= base_url('assets/mophy/js/dashboard/dashboard-1.js'); ?>"></script>
     <script src="<?= base_url('assets/mophy/js/custom.min.js'); ?>"></script>
 	<script src="<?= base_url('assets/mophy/js/deznav-init.js'); ?>"></script>
+    <script src="<?= base_url('assets/js/stdx_scripts.js'); ?>"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
 	<script src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.js"></script>
