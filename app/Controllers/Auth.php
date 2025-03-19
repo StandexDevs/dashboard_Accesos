@@ -38,7 +38,13 @@ class Auth extends \IonAuth\Controllers\Auth
 			if ($this->ionAuth->login($this->request->getVar('identity'), 'password', $remember)){
 				
 				$user = $this->ionAuth->user()->row(); 
-				return redirect()->to('/dashboard/')->withCookies();
+				$isAdmin = $this->ionAuth->isAdmin();
+				
+				if($isAdmin){
+					return redirect()->to('/dashboard/')->withCookies();
+				}else{
+					return redirect()->to('/eventos/');
+				}
 				
 			}else{
 				$this->session->setFlashdata('message', $this->ionAuth->errors($this->validationListTemplate));

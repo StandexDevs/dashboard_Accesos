@@ -19,7 +19,7 @@
     <link href="<?= base_url('assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css'); ?>" rel="stylesheet">
 	<link href="<?= base_url('assets/mophy/css/style.css'); ?>" rel="stylesheet">
 	<link href="<?= base_url('assets/mophy/vendor/owl-carousel/owl.carousel.css'); ?>" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -83,7 +83,7 @@
 									</div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                    <a href="./page-login.html" class="dropdown-item ai-icon">
+                                    <a href="<?= base_url('Auth/logout'); ?>" class="dropdown-item ai-icon">
                                         <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
                                         <span class="ms-2">Logout </span>
                                     </a>
@@ -192,8 +192,9 @@
     <script src="<?= base_url('assets/mophy/vendor/global/global.min.js'); ?>"></script>
 	<script src="<?= base_url('assets/mophy/vendor/bootstrap-select/dist/js/bootstrap-select.min.js'); ?>"></script>
 	<script src="<?= base_url('assets/mophy/vendor/chart.js/Chart.bundle.min.js'); ?>"></script>
-	<script src="<?= base_url('assets/mophy/vendor/owl-carousel/owl.carousel.js'); ?>"></script>		
+	<script src="<?= base_url('assets/mophy/vendor/owl-carousel/owl.carousel.js'); ?>"></script>
     <script src="<?= base_url('assets/mophy/vendor/peity/jquery.peity.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/mophy/js/plugins-init/chartjs-init.js'); ?>"></script>
 	<script src="<?= base_url('assets/mophy/vendor/apexchart/apexchart.js'); ?>"></script>
 	<script src="<?= base_url('assets/mophy/js/dashboard/dashboard-1.js'); ?>"></script>
     <script src="<?= base_url('assets/mophy/js/custom.min.js'); ?>"></script>

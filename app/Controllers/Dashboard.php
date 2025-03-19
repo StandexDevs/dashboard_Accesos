@@ -3,13 +3,13 @@
 namespace App\Controllers;
 
 use App\Models\EventosModel;
-use IonAuth\Libraries\IonAuth;
+use IonAuth\Libraries\IonAuth;   
 use CodeIgniter\API\ResponseTrait;
 use \Hermawan\DataTables\DataTable;
 helper('eventos_helper');
 
 class Dashboard extends BaseController{
-    protected $ionAuth;
+    protected $ionAuth; 
 
     public function __construct(){
         $this->ionAuth = new IonAuth();
@@ -37,9 +37,37 @@ class Dashboard extends BaseController{
         $eventos = $EventosModel->select('id, nombre_evento, fecha_inicio, fecha_fin, recinto, recinto_ub, created_at');
     
         return DataTable::of($eventos)
+        ->edit('fecha_inicio', function($row){
+            return '<span>'. $row->fecha_inicio.' - '. $row->fecha_fin.'</span>';
+        })
+        ->edit('recinto', function($row){
+            return '<span><b>'. $row->recinto.'</b> '. $row->recinto_ub.'</span>';
+        })
+        ->add('action', function($row){
+            return '
+            <a 
+                href="'. base_url('Eventos/index/' . esc($row->id, 'url')) .'"
+                class="btn btn-success btn-rounded">Completado
+            </a>';
+        }, 'last')
+        ->add('action', function($row){
+            return '
+                <div class="btn-group">
+                    <button type="button" class="btn btn-light">
+                        <i class="bi bi-gear"></i>
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>';
+        }, 'last')
         ->hide('id')
+        ->hide('fecha_fin')
+        ->hide('recinto_ub')
         ->addNumbering()
         ->toJson();
     }
-
 }

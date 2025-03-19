@@ -1,6 +1,7 @@
 <?php
     $token = null;
     $ambiente = null;
+    use App\Models\EventosModel;
 
     function fetch_fn($url, $postData, $bearerToken = null) {
         $ch = curl_init($url);
@@ -91,6 +92,14 @@
     function generarClave()
     {
         return substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'), 0, 5);
+    }
+
+    if (!function_exists('obtener_info_evento')) {
+        function obtener_info_evento($id){
+            $db = \Config\Database::connect();
+            $query = $db->table('eventos')->where('id_user', $id)->get()->getRow();  // Retorna la fila como objeto
+            return $query;
+        }
     }
 
 ?>
