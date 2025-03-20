@@ -14,35 +14,31 @@ class Eventos extends BaseController{
         $this->ionAuth = new IonAuth();
     }
 
-    public function index($id = null) 
-    {
+    public function index($id = null) {
         if (!$this->ionAuth->loggedIn()) {
             return redirect()->to('/auth/')->withCookies();
         }
     
         $isAdmin = $this->ionAuth->isAdmin();
         $user = $this->ionAuth->user()->row(); 
-    
+
         // Si el usuario no es admin, obtener la info del evento asociado a su ID
         if (!$isAdmin) {
-            $eventoData = obtener_info_evento($user->id);
-            $id = $id ?? $eventoData->id; // Si no hay ID, usa el del usuario logueado
+            $id = $id ?? $user->id; // Si no hay ID, usa el del usuario logueado
         }
-    
+            
         // Si no hay ID, lanzar error
         if (!$id) {
             return $this->response->setStatusCode(400, 'ID requerido');
         }
     
-        $model = new EventosModel();
-        $evento = $model->find($id);
-    
+        $evento = obtener_info_evento($id);
+
         if (!$evento) {
             return $this->response->setStatusCode(404, 'Evento no encontrado');
         }
     
         $data['evento'] = $evento;
-        
         
         return view('eventos/index', $data);
     }

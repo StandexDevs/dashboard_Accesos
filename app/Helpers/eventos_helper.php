@@ -97,7 +97,7 @@
     if (!function_exists('obtener_info_evento')) {
         function obtener_info_evento($id){
             $db = \Config\Database::connect();
-            $query = $db->table('eventos')->where('id_user', $id)->get()->getRow();  // Retorna la fila como objeto
+            $query = $db->table('vista_eventos_registros')->where('id_evento', $id)->get()->getRow();  // Retorna la fila como objeto
             return $query;
         }
     }

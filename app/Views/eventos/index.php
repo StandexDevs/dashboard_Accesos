@@ -2,7 +2,7 @@
 <?= $this->extend('layout/menu') ?>
 <?= $this->section('content')?>
 <?= $this->section('title')?>
-    <?php echo $evento["nombre_evento"] ?>
+    <?php echo $evento->nombre_evento ?>
 <?= $this->endSection()?>
 
 <div class="row">
@@ -11,7 +11,9 @@
             <div class="card-body">
                 <div class="media align-items-center invoice-card">
                     <div class="media-body">
-                        <h2 class="fs-38 text-black font-w600">582</h2>
+                        <h2 class="fs-38 text-black font-w600">
+                            <?php echo (int)$evento->registros_entradas + (int)$evento->registros_salidas?>
+                        </h2>
                         <span class="fs-18">Total registros</span>
                     </div>
                     <span class="p-3 border ms-3 rounded-circle">
@@ -28,7 +30,9 @@
             <div class="card-body">
                 <div class="media align-items-center invoice-card">
                     <div class="media-body">
-                        <h2 class="fs-38 text-black font-w600">346</h2>
+                        <h2 class="fs-38 text-black font-w600">
+                            <?php echo $evento->registros_entradas ?>
+                        </h2>
                         <span class="fs-18">Entradas</span>
                     </div>
                     <span class="p-3 border ms-3 rounded-circle">
@@ -54,7 +58,9 @@
             <div class="card-body">
                 <div class="media align-items-center invoice-card">
                     <div class="media-body">
-                        <h2 class="fs-38 text-black font-w600">236</h2>
+                        <h2 class="fs-38 text-black font-w600">
+                            <?php echo $evento->registros_salidas ?>
+                        </h2>
                         <span class="fs-18">Salidas</span>
                     </div>
                     <span class="p-3 border ms-3 rounded-circle">
@@ -79,18 +85,42 @@
 
 <div class="card">
     <div class="card-body">
-        <div id="chartBar"></div>
+        <canvas id="chartBar"></canvas>
         <div class="d-flex">
-            <div class="form-check custom-switch toggle-switch text-end me-4">
-                <input type="checkbox" class="form-check-input mt-0" id="customSwitch11">
-                <label class="form-check-label fs-14 text-black pe-2" for="customSwitch11">Number</label>
-            </div>
-            <div class="form-check custom-switch toggle-switch text-end me-4">
-                <input type="checkbox" class="form-check-input mt-0" id="customSwitch12">
-                <label class="form-check-label fs-14 text-black pe-2" for="customSwitch12">Analytics</label>
-            </div>
+          
         </div>
     </div>
 </div>
 
+<script>
+
+    const chartBar = document.getElementById('chartBar');
+    
+    new Chart(chartBar, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue'],
+      datasets: [
+        {
+            label: 'Entradas',
+            data: [12, 19, 3, 5, 2, 3],
+            borderWidth: 1
+        },
+        {
+            label: 'Salidas',
+            data: [12, 19, 3, 5, 2, 3],
+            borderWidth: 1
+        }
+    ]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+</script>
 <?= $this->endSection(); ?>
