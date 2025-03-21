@@ -89,8 +89,7 @@
         }
     }
 
-    function generarClave()
-    {
+    function generarClave(){
         return substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'), 0, 5);
     }
 
@@ -98,6 +97,14 @@
         function obtener_info_evento($id){
             $db = \Config\Database::connect();
             $query = $db->table('vista_eventos_registros')->where('id_evento', $id)->get()->getRow();  // Retorna la fila como objeto
+            return $query;
+        }
+    }
+
+    if (!function_exists('obtener_registros')) {
+        function obtener_registros($id){
+            $db = \Config\Database::connect();
+            $query = $db->table('inputs_outputs')->where('id_evento', $id)->get()->getResult();
             return $query;
         }
     }

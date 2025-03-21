@@ -16,7 +16,7 @@ class Dashboard extends BaseController{
     }
 
     public function index(){
-        if(!$this->ionAuth->loggedIn()){
+        if(!$this->ionAuth->loggedIn() && !$this->ionAuth->isAdmin()){
             return redirect()->to('/auth/')->withCookies();
         }
 

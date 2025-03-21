@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\EventosModel;
 use IonAuth\Libraries\IonAuth;
+use App\Models\inputsOutputsModel;
 use \Hermawan\DataTables\DataTable;
 helper('eventos_helper');
 
@@ -33,22 +34,68 @@ class Eventos extends BaseController{
         }
     
         $evento = obtener_info_evento($id);
+        $registros = obtener_registros($id);
 
         if (!$evento) {
             return $this->response->setStatusCode(404, 'Evento no encontrado');
         }
     
         $data['evento'] = $evento;
-        
+        $data['registros'] = $registros;
+
         return view('eventos/index', $data);
     }
 
-    public function historial(){
-        if(!$this->ionAuth->loggedIn()){
-            return redirect()->to('/auth/')->withCookies();
+    public function historial($id_evento, $hora, $tipo){
+        $token = $this->request->getGet('token');
+        $tipoRegistro = null;
+
+        // Verificar que el token sea válido
+        if (!isset($_SESSION['token_evento'][$id_evento]) || $_SESSION['token_evento'][$id_evento] !== $token) {
+            return $this->response->setStatusCode(403)->setJSON(['error' => 'Acceso denegado']);
         }
 
-        return view('eventos/registros');
+        if (!$this->ionAuth->loggedIn()) {
+            return redirect()->to('/auth/')->withCookies();
+        }
+        
+        // Verificar que el tipo sea válido
+        if (!in_array($tipo, ['Entrada', 'Salida', 'General'])) {
+            return $this->response->setStatusCode(400)->setJSON(['error' => 'Tipo no válido']);
+        }else{
+            $tipoRegistro = $tipo;
+        }
+
+        $horaBase = '08:00';
+
+        $inputsOutputsModel = new inputsOutputsModel();
+        /*
+            $registros = $inputsOutputsModel
+            ->where('id_evento', $id_evento)->where('type', $tipoRegistro)
+            ->findAll();
+        */
+
+        $hora_busqueda = '08:00'; // Formato HH:MM
+
+        $registros = $inputsOutputsModel
+            ->select('*')
+            ->where("TIME_FORMAT(STR_TO_DATE(hour, '%h:%i:%s %p'), '%H:%i')", $hora_busqueda)
+            ->findAll();
+
+        return $this->response->setJSON([
+            'id_evento' => $id_evento,
+            'hora' => $hora,
+            'tipo' => $tipo,
+            'registros' => $registros
+        ]);   
+        
+        if (!$registros) {
+            return $this->response->setStatusCode(404, 'No hay registros para este evento');
+        }
+        
+        $data["registros"] = $registros;
+
+        return view('eventos/registros', $data);
     }
 
     public function guardar_evento(){
@@ -101,7 +148,5 @@ class Eventos extends BaseController{
         
         return $this->response->setJSON(['success' => true, 'message' => 'Evento guardado', 'data' => $insert]);
     }
-
-
 
 }

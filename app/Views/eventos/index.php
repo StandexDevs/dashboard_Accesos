@@ -2,10 +2,15 @@
 <?= $this->extend('layout/menu') ?>
 <?= $this->section('content')?>
 <?= $this->section('title')?>
-    <?php echo $evento->nombre_evento ?>
+    <?php 
+        $token = bin2hex(random_bytes(16));  // Token seguro
+        $_SESSION['token_evento'][$evento->id_evento] = $token;
+        echo $evento->nombre_evento 
+    ?>
 <?= $this->endSection()?>
 
 <div class="row">
+
     <div class="col-xl-4 col-sm-4">
         <div class="card">
             <div class="card-body">
@@ -93,34 +98,101 @@
 </div>
 
 <script>
+    const registros = <?php echo json_encode($registros); ?>;
+    const id_evento = Number(<?php echo $evento->id_evento ?>);
+    const base_url = "<?= base_url('Eventos/historial'); ?>";
+    const token = "<?php echo $token; ?>";
+    // Agrupar registros por hora
+    const dataByHour = {};
 
-    const chartBar = document.getElementById('chartBar');
-    
-    new Chart(chartBar, {
-    type: 'bar',
-    data: {
-      labels: ['Red', 'Blue'],
-      datasets: [
-        {
-            label: 'Entradas',
-            data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1
+    registros.forEach(reg => {
+        const horaCompleta = reg.hour;  // Ej: "09:07:44 AM"
+        const hora = new Date(`1970-01-01 ${horaCompleta}`).getHours();
+
+        if (hora >= 8 && hora <= 20) {
+            if (!dataByHour[hora]) {
+                dataByHour[hora] = { entradas: 0, salidas: 0 };
+            }
+
+            if (reg.type === "Entrada") {
+                dataByHour[hora].entradas++;
+            } else if (reg.type === "Salida") {
+                dataByHour[hora].salidas++;
+            }
+        }
+    });
+
+    // Generar las horas de 8:00 AM a 8:00 PM
+    const horas = Array.from({ length: 13 }, (_, i) => `${i + 8}:00`);
+    const entradas = horas.map(h => dataByHour[parseInt(h)]?.entradas || 0);
+    const salidas = horas.map(h => dataByHour[parseInt(h)]?.salidas || 0);
+
+    // Crear gráfica
+    const ctx = document.getElementById('chartBar').getContext('2d');
+    const chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: horas,
+            datasets: [
+                {
+                    label: 'Entradas',
+                    data: entradas,
+                    backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Salidas',
+                    data: salidas,
+                    backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                    borderWidth: 1
+                }
+            ]
         },
-        {
-            label: 'Salidas',
-            data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1
-        }
-    ]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            onClick: (event) => {
+                // Detectar clic en una barra específica
+                const points = chart.getElementsAtEventForMode(event, 'nearest', { intersect: true }, true);
 
+                if (points.length) {
+                    const index = points[0].index;  // Índice de la barra
+                    const datasetIndex = points[0].datasetIndex;  // Dataset: 0 = Entradas, 1 = Salidas
+                    const hora = horas[index];
+                    const tipo = datasetIndex === 0 ? 'Entrada' : 'Salida';
+                    const cantidad = chart.data.datasets[datasetIndex].data[index];
+
+                    console.log(`Hora: ${hora}\nTipo: ${tipo}\nCantidad: ${cantidad}`);
+                    location.href= `${base_url}/${id_evento}/${hora}/${tipo}?token=${token}`;
+                } else {
+                    // Detectar clic en el contenedor (grupo de barras)
+                    const groupPoints = chart.getElementsAtEventForMode(event, 'index', { intersect: false }, true);
+
+                    if (groupPoints.length) {
+                        const index = groupPoints[0].index; 
+                        const hora = horas[index];
+                        const entradasGrupo = entradas[index];
+                        const salidasGrupo = salidas[index];
+
+                        console.log(`Hora: ${hora}\nEntradas: ${entradasGrupo}\nSalidas: ${salidasGrupo}`);
+                    location.href= `${base_url}/${id_evento}/${hora}/General?token=${token}`;
+
+                        // location.href = ´${}´;
+                    }
+                }
+            }
+        }
+    });
+
+    
 </script>
 <?= $this->endSection(); ?>
