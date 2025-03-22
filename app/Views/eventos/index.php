@@ -172,7 +172,7 @@
                     const cantidad = chart.data.datasets[datasetIndex].data[index];
 
                     console.log(`Hora: ${hora}\nTipo: ${tipo}\nCantidad: ${cantidad}`);
-                    location.href= `${base_url}/${id_evento}/${hora}/${tipo}?token=${token}`;
+                    location.href= `${base_url}/${id_evento}/${hora}/${tipo}`;
                 } else {
                     // Detectar clic en el contenedor (grupo de barras)
                     const groupPoints = chart.getElementsAtEventForMode(event, 'index', { intersect: false }, true);
@@ -184,7 +184,7 @@
                         const salidasGrupo = salidas[index];
 
                         console.log(`Hora: ${hora}\nEntradas: ${entradasGrupo}\nSalidas: ${salidasGrupo}`);
-                    location.href= `${base_url}/${id_evento}/${hora}/General?token=${token}`;
+                        location.href= `${base_url}/${id_evento}/${hora}/General?token=${token}`;
 
                         // location.href = ´${}´;
                     }

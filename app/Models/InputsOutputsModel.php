@@ -4,8 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class InputsOutputsModel extends Model
-{
+class InputsOutputsModel extends Model{
     // Nombre de la tabla en la base de datos
     protected $table = 'inputs_outputs';
 
@@ -43,7 +42,7 @@ class InputsOutputsModel extends Model
         'day' => 'required|max_length[100]',
         'month' => 'required|max_length[100]',
         'year' => 'required|max_length[100]',
-        'hour' => 'required|max_length[100]',
+        'hour' => 'required|valid_time', // Valida que sea una hora válida
         'idUser' => 'required|max_length[500]',
         'type' => 'required|max_length[100]',
         'userRegistration' => 'required|max_length[100]',
@@ -68,7 +67,7 @@ class InputsOutputsModel extends Model
         ],
         'hour' => [
             'required' => 'El campo hora es obligatorio.',
-            'max_length' => 'El campo hora no debe exceder los 100 caracteres.'
+            'valid_time' => 'El campo hora debe ser una hora válida.'
         ],
         'idUser' => [
             'required' => 'El campo idUser es obligatorio.',
