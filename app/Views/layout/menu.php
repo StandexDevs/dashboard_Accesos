@@ -1,6 +1,9 @@
+<?php
+    $nombre_user = session()->get('user')->first_name;    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,6 +45,7 @@
         Preloader end
     ********************-->
 
+
     <!--**********************************
         Main wrapper start
     ***********************************-->
@@ -80,8 +84,9 @@
                             <li class="nav-item dropdown header-profile">
                                 <a class="nav-link" href="javascript:void(0)" role="button" data-bs-toggle="dropdown">
 									<div class="header-info">
-										<span class="text-black">Hello,<strong>Franklin</strong></span>
-										<p class="fs-12 mb-0">Super Admin</p>
+										<span class="text-black">
+                                            <strong><?php echo $nombre_user; ?> </strong>
+                                        </span>
 									</div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
@@ -106,30 +111,32 @@
         <div class="deznav">
             <div class="deznav-scroll">
 				<ul class="metismenu" id="menu">
-                    <li>
-                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-networking"></i>
-							<span class="nav-text">Dashboard</span>
-						</a>
-                    </li>
-                    <li>
-                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-television"></i>
-							<span class="nav-text">Apps</span>
-						</a>
-                    </li>
-                    <li>
-                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-controls-3"></i>
-							<span class="nav-text">Charts</span>
-						</a>
-                    </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-internet"></i>
-							<span class="nav-text">Bootstrap</span>
-						</a>
 
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="fa-solid fa-house"></i>
+							<span class="nav-text">Inicio</span>
+						</a>
                     </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="bi bi-box-arrow-right"></i>
+							<span class="nav-text">Entradas</span>
+						</a>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="bi bi-box-arrow-left"></i>
+							<span class="nav-text">Salidas</span>
+						</a>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="bi bi-door-open-fill"></i>
+							<span class="nav-text">Torniquetes</span>
+						</a>
+                    </li>
+
                 </ul>
 				
 				<div class="copyright">

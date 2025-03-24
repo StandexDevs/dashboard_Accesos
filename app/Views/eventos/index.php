@@ -9,12 +9,19 @@
     ?>
 <?= $this->endSection()?>
 
-<div class="row">
+<style>
+    canvas {
+        max-width: 100%;
+        max-height: 400px;
+    }
 
-    <div class="col-xl-4 col-sm-4">
+</style>
+
+<div class="row">
+    <div class="col-xl-3 col-sm-3">
         <div class="card">
             <div class="card-body">
-                <div class="media align-items-center invoice-card">
+                <div class="media align-items-center invoice-card" onclick="consultarRegistro('General')">
                     <div class="media-body">
                         <h2 class="fs-38 text-black font-w600">
                             <?php echo (int)$evento->registros_entradas + (int)$evento->registros_salidas?>
@@ -30,10 +37,10 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-4 col-sm-4">
+    <div class="col-xl-3 col-sm-3">
         <div class="card">
             <div class="card-body">
-                <div class="media align-items-center invoice-card">
+                <div class="media align-items-center invoice-card" onclick="consultarRegistro('Entrada')">
                     <div class="media-body">
                         <h2 class="fs-38 text-black font-w600">
                             <?php echo $evento->registros_entradas ?>
@@ -58,10 +65,10 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-4 col-sm-4">
+    <div class="col-xl-3 col-sm-3">
         <div class="card">
             <div class="card-body">
-                <div class="media align-items-center invoice-card">
+                <div class="media align-items-center invoice-card" onclick="consultarRegistro('Salida')">
                     <div class="media-body">
                         <h2 class="fs-38 text-black font-w600">
                             <?php echo $evento->registros_salidas ?>
@@ -86,14 +93,32 @@
             </div>
         </div>
     </div>
+    <div class="col-xl-3 col-sm-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="media align-items-center invoice-card" onclick="consultarRegistro('General')">
+                    <div class="media-body">
+                        <h2 class="fs-38 text-black font-w600">
+                            <?php echo (int)$evento->registros_entradas + (int)$evento->registros_salidas?>
+                        </h2>
+                        <span class="fs-18">Torniquetes registrados</span>
+                    </div>
+                    <span class="p-3 border ms-3 rounded-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="currentColor" viewBox="0 0 576 512">
+                            <path d="M320 32c0-9.9-4.5-19.2-12.3-25.2S289.8-1.4 280.2 1l-179.9 45C79 51.3 64 70.5 64 92.5L64 448l-32 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0 192 0 32 0 0-32 0-448zM256 256c0 17.7-10.7 32-24 32s-24-14.3-24-32s10.7-32 24-32s24 14.3 24 32zm96-128l96 0 0 352c0 17.7 14.3 32 32 32l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-32 0 0-320c0-35.3-28.7-64-64-64l-96 0 0 64z"/>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="card">
     <div class="card-body">
-        <canvas id="chartBar"></canvas>
-        <div class="d-flex">
-          
-        </div>
+        <canvas id="chartBar">
+
+        </canvas>
     </div>
 </div>
 
@@ -171,7 +196,6 @@
                     const tipo = datasetIndex === 0 ? 'Entrada' : 'Salida';
                     const cantidad = chart.data.datasets[datasetIndex].data[index];
 
-                    console.log(`Hora: ${hora}\nTipo: ${tipo}\nCantidad: ${cantidad}`);
                     location.href= `${base_url}/${id_evento}/${hora}/${tipo}`;
                 } else {
                     // Detectar clic en el contenedor (grupo de barras)
@@ -183,15 +207,16 @@
                         const entradasGrupo = entradas[index];
                         const salidasGrupo = salidas[index];
 
-                        console.log(`Hora: ${hora}\nEntradas: ${entradasGrupo}\nSalidas: ${salidasGrupo}`);
-                        location.href= `${base_url}/${id_evento}/${hora}/General?token=${token}`;
-
-                        // location.href = ´${}´;
+                        location.href= `${base_url}/${id_evento}/${hora}/General`;
                     }
                 }
             }
         }
     });
+
+    const consultarRegistro = (tipo) => {
+        location.href= `${base_url}/${id_evento}/todos/${tipo}`;
+    }
 
     
 </script>

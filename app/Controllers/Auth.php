@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 
 use CodeIgniter\HTTP\IncomingRequest;
+helper('eventos_helper');
 
 class Auth extends \IonAuth\Controllers\Auth
 {
@@ -39,11 +40,26 @@ class Auth extends \IonAuth\Controllers\Auth
 				
 				$user = $this->ionAuth->user()->row(); 
 				$isAdmin = $this->ionAuth->isAdmin();
-				
+
+				$evento = null;
+
+				if(!$isAdmin){
+					$eventoData = obtener_id_evento($user->id);
+					$evento = obtener_info_evento($eventoData->id);
+				}
+
+				$sessionData = [
+					'user'    => $user,
+					'is_admin'   => $isAdmin,
+					'evento' => $evento
+				];
+
+				session()->set($sessionData);
+
 				if($isAdmin){
 					return redirect()->to('/dashboard/')->withCookies();
 				}else{
-					return redirect()->to('/eventos/');
+					return redirect()->to('/eventos/')->withCookies();
 				}
 				
 			}else{

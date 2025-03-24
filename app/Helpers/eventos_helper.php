@@ -93,6 +93,14 @@
         return substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'), 0, 5);
     }
 
+    if (!function_exists('obtener_id_evento')) {
+        function obtener_id_evento($id){
+            $db = \Config\Database::connect();
+            $query = $db->table('eventos')->where('id_user', $id)->get()->getRow();  // Retorna la fila como objeto
+            return $query;
+        }
+    }
+
     if (!function_exists('obtener_info_evento')) {
         function obtener_info_evento($id){
             $db = \Config\Database::connect();

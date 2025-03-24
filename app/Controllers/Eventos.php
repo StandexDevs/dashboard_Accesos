@@ -19,13 +19,14 @@ class Eventos extends BaseController{
         if (!$this->ionAuth->loggedIn()) {
             return redirect()->to('/auth/')->withCookies();
         }
-    
+
         $isAdmin = $this->ionAuth->isAdmin();
         $user = $this->ionAuth->user()->row(); 
 
         // Si el usuario no es admin, obtener la info del evento asociado a su ID
         if (!$isAdmin) {
-            $id = $id ?? $user->id; // Si no hay ID, usa el del usuario logueado
+            $eventoData = obtener_id_evento($user->id);
+            $id = $eventoData->id; // Si no hay ID, usa el del usuario logueado
         }
             
         // Si no hay ID, lanzar error
@@ -47,15 +48,10 @@ class Eventos extends BaseController{
     }
 
     public function historial($id_evento, $hora, $tipo){
+
+        $inputsOutputsModel = new inputsOutputsModel();
         $token = $this->request->getGet('token');
         $tipoRegistro = null;
-
-        // Verificar que el token sea válido
-        /*
-        if (!isset($_SESSION['token_evento'][$id_evento]) || $_SESSION['token_evento'][$id_evento] !== $token) {
-            return $this->response->setStatusCode(403)->setJSON(['error' => 'Acceso denegado']);
-        }
-            */
 
         if (!$this->ionAuth->loggedIn()) {
             return redirect()->to('/auth/')->withCookies();
@@ -68,15 +64,18 @@ class Eventos extends BaseController{
             $tipoRegistro = $tipo;
         }
 
-        $hora_formateada = date('H:i:s', strtotime($hora));
-        $hora_inicio = $hora_formateada;
-        $hora_fin = date('H:i:s', strtotime($hora_formateada) + 3599); // 16:59:59
+        $registros = $inputsOutputsModel->where('id_evento', $id_evento);
+        
+        if($hora !== 'todos'){
 
-        $inputsOutputsModel = new inputsOutputsModel();
-        $registros = $inputsOutputsModel
-            ->where('id_evento', $id_evento)
-            ->where('hour >=', $hora_inicio)
-            ->where('hour <=', $hora_fin);
+            $hora_formateada = date('H:i:s', strtotime($hora));
+            $hora_inicio = $hora_formateada;
+            $hora_fin = date('H:i:s', strtotime($hora_formateada) + 3599); // 16:59:59
+
+            $inputsOutputsModel
+                ->where('hour >=', $hora_inicio)
+                ->where('hour <=', $hora_fin);
+        }
 
         if($tipo != 'General'){
             $inputsOutputsModel->where('type', $tipoRegistro);
@@ -88,6 +87,7 @@ class Eventos extends BaseController{
             return $this->response->setStatusCode(404, 'No hay registros para este evento');
         }
         
+        $data["tipo"] = $tipo;
         $data["registros"] = $registros;
         $data["evento"] = obtener_info_evento($id_evento);
 
