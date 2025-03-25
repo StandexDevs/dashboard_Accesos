@@ -1,5 +1,13 @@
 <?php
-    $nombre_user = session()->get('user')->first_name;    
+    $nombre_user = session()->get('user')->first_name; 
+    $is_admin = session()->get('is_admin');    
+    $evento = null;
+
+    if(!$is_admin){
+        $evento = session()->get('evento')->id_evento;
+    }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -85,7 +93,7 @@
                                 <a class="nav-link" href="javascript:void(0)" role="button" data-bs-toggle="dropdown">
 									<div class="header-info">
 										<span class="text-black">
-                                            <strong><?php echo $nombre_user; ?> </strong>
+                                            <strong><?php echo $nombre_user; ?></strong>
                                         </span>
 									</div>
                                 </a>
@@ -111,32 +119,39 @@
         <div class="deznav">
             <div class="deznav-scroll">
 				<ul class="metismenu" id="menu">
-
-                    <li>
-                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="fa-solid fa-house"></i>
-							<span class="nav-text">Inicio</span>
-						</a>
-                    </li>
-                    <li>
-                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="bi bi-box-arrow-right"></i>
-							<span class="nav-text">Entradas</span>
-						</a>
-                    </li>
-                    <li>
-                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="bi bi-box-arrow-left"></i>
-							<span class="nav-text">Salidas</span>
-						</a>
-                    </li>
-                    <li>
-                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="bi bi-door-open-fill"></i>
-							<span class="nav-text">Torniquetes</span>
-						</a>
-                    </li>
-
+                    <?php if($is_admin && $evento === null) : ?>
+                        <li>
+                            <a href="<?= base_url('dashboard/'); ?>" aria-expanded="false">
+                                <i class="fa-solid fa-house"></i>
+                                <span class="nav-text">Inicio</span>
+                            </a>
+                        </li>
+                    <?php else : ?>
+                        <li>
+                            <a href="<?= base_url('eventos/'); ?>" aria-expanded="false">
+                                <i class="fa-solid fa-house"></i>
+                                <span class="nav-text">Inicio</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('Eventos/historial/'.$evento.'/todos/Entrada'); ?>" aria-expanded="false">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span class="nav-text">Entradas</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('Eventos/historial/'.$evento.'/todos/Salida'); ?>" aria-expanded="false">
+                                <i class="bi bi-box-arrow-left"></i>
+                                <span class="nav-text">Salidas</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('torniquetes/'); ?>" aria-expanded="false">
+                                <i class="bi bi-door-open-fill"></i>
+                                <span class="nav-text">Torniquetes</span>
+                            </a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
 				
 				<div class="copyright">
