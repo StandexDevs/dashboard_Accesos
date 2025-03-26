@@ -227,26 +227,29 @@ class RestController extends ResourceController
     
         $type = $this->request->getPost('type');
         $url = $this->request->getPost('url'); // idUser
-    
+        $id_evento = $this->request->getPost('id_evento');
         // 🔹 Verificar si el usuario existe en la BD externa
         $usuario = $userExternalModel->where('id', $url)->first();
     
         if (!$usuario) {
             return $this->response->setStatusCode(404)->setJSON(["error" => "Usuario no encontrado en la base de datos externa"]);
         }
-    
+
         // 🔹 Datos a insertar en la BD local
         $data = [
             'day' => date("d"),
             'month'  => date("m"),
             'year'  => date("Y"),
-            'hour'  => date('h:i:s A'),
+            'hour'  => date('H:i:s'),
             'idUser'  => $url,
             'type'  => $type,
             'userRegistration' => 'Torniquete',
             'nombreCompleto' => trim($usuario['nombre'] . ' ' . $usuario['apellido_paterno'] . ' ' . $usuario['apellido_materno']),
-            'empresa' => $usuario['institucion_1']
+            'empresa' => $usuario['institucion_1'],
+            'id_evento' => $id_evento
         ];
+
+        return $this->response->setJSON($data);
     
         // 🔹 Insertar datos en la BD local
         $model->insert($data);
@@ -284,7 +287,8 @@ class RestController extends ResourceController
                 'idUser'  => $idUser,
                 'type'  => $type,
                 'userRegistration' => 'Torniquete',
-                'nombreCompleto' => $nombreCompleto
+                'nombreCompleto' => $nombreCompleto,
+                'id_evento' => '1'
             ];
 
             if (isset($idUser)) {

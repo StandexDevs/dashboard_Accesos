@@ -3,13 +3,15 @@
 <?= $this->section('title')?>
     Dashboard 
 <?= $this->endSection()?>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 
     <div class="d-sm-flex d-block align-items-center mb-4">
         <div class="me-auto">
             <h4 class="fs-20 text-black">Eventos registrados</h4>
         </div>
 
-        <button class="btn btn-light btn-rounded" id="modalEvento" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">
+        <button class="btn btn-light btn-rounded" id="modalEvento" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg" data-modo="nuevo">
             <i class="las la-calendar-alt scale5 me-3"></i>
             Registrar evento
         </button>
@@ -25,6 +27,7 @@
                     <th>Fechas</th>
                     <th>Recinto</th>
                     <th>Fecha de registro</th>
+                    <th>Clave</th>
                     <th>Status</th>
                     <th>Acciones</th>
                 </tr>
@@ -115,6 +118,8 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 	<script>
         let selectEvento = document.getElementById("select_evento");
@@ -125,10 +130,54 @@
         let recinto = document.querySelector("#recinto");
         let recinto_ub = document.querySelector("#recinto_ub");
         
-        const btnModalEvento = document.getElementById("modalEvento");
-        const btnSiguiente = document.getElementById("btnSiguiente");
+        const btnEditar = document.getElementById("btnBorrar");
+        const btnBorrar = document.getElementById("btnBorrar");
         const btnGuardar = document.getElementById("btnGuardar");
-        const btnNav = document.getElementById("btnNav");
+        const btnNuevo = document.getElementById("btnNuevo");
+
+        const modal = document.querySelector(".bd-example-modal-lg");
+
+        modal.addEventListener('show.bs.modal', (event) => {
+
+            const selectEvento = $('#select_evento');  // Usar jQuery
+
+            // Limpiar opciones previas
+            selectEvento.empty();
+            
+            // Asegúrate de que haya opciones en el select
+            selectEvento.append(new Option("Seleccione un rango de fecha", "0"));
+
+            const button = event.relatedTarget;  // Botón que disparó el modal
+            const modo = button.getAttribute('data-modo');  // Obtener el modo
+            const modalTitle = document.getElementById('modal-title');
+
+            if (modo === 'nuevo') {
+                // Modo nuevo
+                modalTitle.textContent = 'Nuevo evento';
+                document.getElementById('id_evento').value = '';  // Limpiar ID
+                document.getElementById('btnGuardar').textContent = 'Guardar nuevo';
+            }
+
+            if (modo === 'editar') {
+                const id = button.getAttribute('data-id');  // Obtener el modo
+                modalTitle.textContent = 'Editar registro';
+                document.getElementById('btnGuardar').textContent = 'Guardar cambios';
+                console.log(id);
+
+
+            }
+
+            // Inicializa Select2 después de añadir opciones
+            selectEvento.select2({
+                placeholder: "Selecciona uno o más eventos",
+                allowClear: true
+            });
+
+        });
+
+        const editarCampos = (id) => {
+
+        }
 
         const infoEvento = (fecha_init, fecha_final, nm_recinto, estado) => {
             fecha_inicio.value = fecha_init;
@@ -136,16 +185,6 @@
             recinto.value = nm_recinto;
             recinto_ub.value = estado;
         }
-
-        btnModalEvento.addEventListener('show.bs.modal', () => {
-            // Asegúrate de que haya opciones en el select
-            selectEvento.append(new Option("Seleccione un rango de fecha", "0"));
-            // Inicializa Select2 después de añadir opciones
-            selectEvento.select2({
-                placeholder: "Selecciona uno o más eventos",
-                allowClear: true
-            });
-        })
 
         $(document).ready(() => {
             $('#eventosTable').DataTable({
@@ -320,7 +359,7 @@
         document.getElementById("formEvento").addEventListener("submit", (event) => {
             event.preventDefault();
 
-            var formData = new FormData(this);
+            var formData = new FormData(event.target);
             var formObject = {};
 
             formData.forEach((value, key) => {
@@ -331,18 +370,28 @@
             let selectedText = select.options[select.selectedIndex].text;
             formObject["nombre_evento"] = selectedText;
 
+
+            /*
+            apiRequest("<?= base_url('Eventos/guardar_evento'); ?>", "POST", formObject)
+            .then(data => console.log("Datos obtenidos:", data))
+            .catch(error => console.error("Error en GET:", error));
+            */
+
+            console.log(formObject)
             fetch("<?= base_url('Eventos/guardar_evento'); ?>", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(formObject)
+                body: formObject
             })
             .then(response => response.json())
             .then(data => console.log("Respuesta del servidor:", data))
             .catch(error => console.error("Error:", error));
 
         });
+
+
  
 	</script>
 

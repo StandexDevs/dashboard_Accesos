@@ -31,8 +31,10 @@
 	<link href="<?= base_url('assets/mophy/css/style.css'); ?>" rel="stylesheet">
 	<link href="<?= base_url('assets/mophy/vendor/owl-carousel/owl.carousel.css'); ?>" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -232,6 +234,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
 	<script>
+
+        async function apiRequest(url, metodo = "GET", data = null) {
+            try {
+                const options = {
+                    method: metodo,
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                };
+
+                // Agrega el body solo para métodos POST y PUT
+                if (data && (metodo === "POST" || metodo === "PUT")) {
+                    options.body = JSON.stringify(data);
+                }
+
+                const response = await fetch(url, options);
+
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status} - ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                return result;
+
+            } catch (error) {
+                console.error(`Error en la petición ${metodo}:`, error);
+                throw error;
+            }
+        }
 
 	</script>
 </body>

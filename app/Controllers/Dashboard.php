@@ -33,20 +33,21 @@ class Dashboard extends BaseController{
     }
 
     public function eventos_registrados(){
-        $EventosModel = new EventosModel();
-        $eventos = $EventosModel->select('id, nombre_evento, fecha_inicio, fecha_fin, recinto, recinto_ub, created_at');
+        $db = db_connect();
+        $query = $db->table('vista_eventos_registros')
+        ->select('id_evento, nombre_evento, fecha_inicio, fecha_fin, recinto, created_at, clave_evento, status');
     
-        return DataTable::of($eventos)
+        return DataTable::of($query)
         ->edit('fecha_inicio', function($row){
             return '<span>'. $row->fecha_inicio.' - '. $row->fecha_fin.'</span>';
         })
         ->edit('recinto', function($row){
-            return '<span><b>'. $row->recinto.'</b> '. $row->recinto_ub.'</span>';
+            return '<span><b>'. $row->recinto.'</b></span>';
         })
-        ->add('action', function($row){
+        ->edit('status', function($row){
             return '
             <a 
-                href="'. base_url('Eventos/index/' . esc($row->id, 'url')) .'"
+                href="'. base_url('Eventos/index/' . esc($row->id_evento, 'url')) .'"
                 class="btn btn-success btn-rounded">Completado
             </a>';
         }, 'last')
@@ -56,16 +57,17 @@ class Dashboard extends BaseController{
                     <button type="button" class="btn btn-light">
                         <i class="bi bi-gear"></i>
                     </button>
-                    <button type="button" class="btn btn-primary">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" 
+                    data-bs-target=".bd-example-modal-lg" data-modo="editar" id="btnBorrar" data-id="'. $row->id_evento .'">
                         <i class="bi bi-pencil-square"></i>
                     </button>
-                    <button type="button" class="btn btn-danger">
+                    <button type="button" class="btn btn-danger" id="btnBorrar" data-id="'. $row->id_evento .'">
                         <i class="bi bi-trash"></i>
                     </button>
                 </div>';
         }, 'last')
-        ->hide('id')
-        ->hide('fecha_fin')
+        ->hide('id_evento')
+        ->hide('fecha_inicio')
         ->hide('recinto_ub')
         ->addNumbering()
         ->toJson();

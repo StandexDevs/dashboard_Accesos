@@ -101,7 +101,7 @@ class Eventos extends BaseController{
         $json = $this->request->getJSON(true);
 
         if (!$json) {
-            return $this->response->setJSON(['success' => false, 'message' => 'No se recibieron datos', 'data' => null]);
+            return $this->response->setJSON(['success' => false, 'message' => 'No se recibieron datos', 'data' => $json ]);
         }
 
         $data = [
