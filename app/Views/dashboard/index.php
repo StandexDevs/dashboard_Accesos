@@ -370,20 +370,13 @@
             let selectedText = select.options[select.selectedIndex].text;
             formObject["nombre_evento"] = selectedText;
 
-
-            /*
-            apiRequest("<?= base_url('Eventos/guardar_evento'); ?>", "POST", formObject)
-            .then(data => console.log("Datos obtenidos:", data))
-            .catch(error => console.error("Error en GET:", error));
-            */
-
             console.log(formObject)
             fetch("<?= base_url('Eventos/guardar_evento'); ?>", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: formObject
+                body: JSON.stringify(formObject)
             })
             .then(response => response.json())
             .then(data => console.log("Respuesta del servidor:", data))

@@ -97,6 +97,7 @@ class Eventos extends BaseController{
     public function guardar_evento(){
         $clave = "";
         $EventosModel = new EventosModel();
+
         // Recibir los datos como JSON
         $json = $this->request->getJSON(true);
 
@@ -128,11 +129,14 @@ class Eventos extends BaseController{
         );
         $group = array('2');
 
+			return $this->response->setJSON([$username, $password, $email, $additional_data, $group]);
+
+
         $registro = $this->ionAuth->register($username, $password, $email, $additional_data, $group);
         
 		if (!$registro){
 			$errors = $this->ionAuth->errors();
-			return $this->response->setJSON(["success" => false, "msg" => $errors]);
+			return $this->response->setJSON(["success" => false, "msg" => $registro]);
 		}
 
         $data["id_user"] = $registro;
