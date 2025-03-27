@@ -248,9 +248,7 @@ class RestController extends ResourceController
             'empresa' => $usuario['institucion_1'],
             'id_evento' => $id_evento
         ];
-
-        return $this->response->setJSON($data);
-    
+            
         // 🔹 Insertar datos en la BD local
         $model->insert($data);
     

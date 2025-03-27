@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\EventosModel;
 use IonAuth\Libraries\IonAuth;
-use App\Models\inputsOutputsModel;
+use App\Models\InputsOutputsModel;
 use \Hermawan\DataTables\DataTable;
 helper('eventos_helper');
 
@@ -49,7 +49,7 @@ class Eventos extends BaseController{
 
     public function historial($id_evento, $hora, $tipo){
 
-        $inputsOutputsModel = new inputsOutputsModel();
+        $inputsOutputsModel = new InputsOutputsModel();
         $token = $this->request->getGet('token');
         $tipoRegistro = null;
 
@@ -81,7 +81,13 @@ class Eventos extends BaseController{
             $inputsOutputsModel->where('type', $tipoRegistro);
         }
 
-        $registros = $inputsOutputsModel->findAll();
+        $registros = $registros
+            ->orderBy('year', 'DESC')
+            ->orderBy('month', 'DESC')
+            ->orderBy('day', 'DESC')
+            ->orderBy('hour', 'DESC')
+            ->findAll();
+
         
         if (!$registros) {
             return $this->response->setStatusCode(404, 'No hay registros para este evento');
@@ -96,15 +102,17 @@ class Eventos extends BaseController{
 
     public function guardar_evento(){
         $clave = "";
+        $intentos = 0;
         $EventosModel = new EventosModel();
 
         // Recibir los datos como JSON
         $json = $this->request->getJSON(true);
 
         if (!$json) {
-            return $this->response->setJSON(['success' => false, 'message' => 'No se recibieron datos', 'data' => $json ]);
+            return $this->response->setJSON(['success' => false, 'msg' => 'No se recibieron datos', 'data' => $json ]);
         }
 
+        //opcion 1
         $data = [
             'id_evento'     => $json['id_evento'] ?? null,
             'evento'        => $json['evento'] ?? null,
@@ -116,37 +124,58 @@ class Eventos extends BaseController{
             'id_user'       => 0,
         ];
 
-        do{
+        do {
             $clave = generarClave();
+            $intentos++;
+            if ($intentos > 10) { // Evita bucles infinitos
+                break;
+            }
         } while ($this->ionAuth->usernameCheck($clave));
         
         $username = $clave;
-        $password = "password";
-        $email = 'evento@email.com';
+        $password = 'password';
+        $email = "{$data['evento']}@gmail.com"; //Recordar que el Email debe ser unico si no la libreria no te dejará registrar
         $additional_data = array(
             'first_name' => $data["nombre_evento"],
-            'last_name' => $data["evento"],
+            'last_name' => $data['evento']
         );
         $group = array('2');
-
-			return $this->response->setJSON([$username, $password, $email, $additional_data, $group]);
-
 
         $registro = $this->ionAuth->register($username, $password, $email, $additional_data, $group);
         
 		if (!$registro){
-			$errors = $this->ionAuth->errors();
-			return $this->response->setJSON(["success" => false, "msg" => $registro]);
+			return $this->response->setJSON(["success" => false, "msg" => $this->ionAuth->messages()]);
 		}
 
         $data["id_user"] = $registro;
 
         $insert = $EventosModel->insert($data);
-
-        // Aquí puedes insertar los datos en la base de datos con un modelo
-        // $this->eventoModel->insert($data);
         
-        return $this->response->setJSON(['success' => true, 'message' => 'Evento guardado', 'data' => $insert]);
+        return $this->response->setJSON(['success' => true, 'msg' => 'Evento guardado', 'data' => $insert]);
+    }
+
+    public function obtener_evento($id_evento){
+
+        if(!$id_evento){
+            return $this->response->setJSON(['success' => false, 'msg' => 'No se ha enviado un evento', 'data' => null]);
+        } 
+
+        $evento = obtener_info_evento($id_evento);
+
+        if(!$evento){
+            return $this->response->setJSON(['success' => false, 'msg' => 'No se ha encontrado el evento', 'data' => null]);
+        }
+
+        return $this->response->setJSON(['success' => true, 'msg' => 'Evento encontrado', 'data' => $evento]);
+
+    }
+
+    public function editar_evento($id){
+
+    }
+
+    public function eliminar_evento($id){
+
     }
 
 }

@@ -122,9 +122,14 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 	<script>
+        let table;
         let selectEvento = document.getElementById("select_evento");
         let listaEventos = [];
 
+
+        let id_evento = document.querySelector("#id_evento"); 
+        let start_date1 = document.querySelector("#start_date1");
+        let start_date2 = document.querySelector("#start_date2");
         let fecha_inicio = document.querySelector("#fecha_inicio");
         let fecha_fin = document.querySelector("#fecha_fin");
         let recinto = document.querySelector("#recinto");
@@ -163,7 +168,7 @@
                 modalTitle.textContent = 'Editar registro';
                 document.getElementById('btnGuardar').textContent = 'Guardar cambios';
                 console.log(id);
-
+                obtener_info_evento(id);
 
             }
 
@@ -175,11 +180,30 @@
 
         });
 
-        const editarCampos = (id) => {
+        const obtener_info_evento = (id) => {
+            apiRequest("<?= base_url('Eventos/obtener_evento'); ?>"+"/"+id, "GET", null)
+            .then(data => {
+                console.log(data)
+                const {id_evento, nombre_evento, fecha_inicio, fecha_fin, recinto, estado} = data.data;
+                console.log(nombre_evento)
 
+                infoEvento(id_evento, nombre_evento, fecha_inicio, fecha_fin, recinto, estado);
+            })
+            .catch(error => console.error("Error:", error));
         }
 
-        const infoEvento = (fecha_init, fecha_final, nm_recinto, estado) => {
+        const editarCampos = (id) => {
+            apiRequest("<?= base_url('Eventos/obtener_evento'); ?>"+"/"+id, "GET", null)
+            .then(data => {
+                console.log(data)
+            })
+            .catch(error => console.error("Error:", error));
+        }
+
+        const infoEvento = (id, evento, fecha_init, fecha_final, nm_recinto, estado) => {
+
+            id_evento.value = id;
+            selectEvento.value = evento;
             fecha_inicio.value = fecha_init;
             fecha_fin.value = fecha_final;
             recinto.value = nm_recinto;
@@ -187,7 +211,7 @@
         }
 
         $(document).ready(() => {
-            $('#eventosTable').DataTable({
+            table = $('#eventosTable').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: "<?= base_url('Dashboard/eventos_registrados'); ?>"
@@ -345,7 +369,7 @@
                 eventosSeleccionados = listaEventos.find(evento => evento.id_evento === Number(selectedEventos));                
                 const {recinto, paisEstado, inicio_evento, fin_evento} = eventosSeleccionados;
 
-                infoEvento(inicio_evento, fin_evento, recinto, paisEstado);
+                infoEvento(null, null, inicio_evento, fin_evento, recinto, paisEstado);
                 
             } else {
                 Swal.fire({
@@ -370,22 +394,30 @@
             let selectedText = select.options[select.selectedIndex].text;
             formObject["nombre_evento"] = selectedText;
 
-            console.log(formObject)
-            fetch("<?= base_url('Eventos/guardar_evento'); ?>", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(formObject)
+            apiRequest("<?= base_url('Eventos/guardar_evento'); ?>", "POST", formObject)
+            .then(data => {
+                const {success, message} = data;
+
+                if(!success){
+                    Swal.fire({
+                        title: message,
+                        icon: "error",
+                        draggable: true
+                    });
+                }
+
+                Swal.fire({
+                    title: message,
+                    icon: "success",
+                    draggable: true
+                });
+
+                table.ajax.reload();
             })
-            .then(response => response.json())
-            .then(data => console.log("Respuesta del servidor:", data))
             .catch(error => console.error("Error:", error));
 
         });
 
-
- 
 	</script>
 
 <?= $this->endSection(); ?>
