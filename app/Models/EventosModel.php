@@ -9,7 +9,7 @@ class EventosModel extends Model
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $allowedFields    = [
-        'id_user', 'nombre_evento', 'id_cliente', 'email_cliente', 'fecha_inicio',
+        'id_user', 'nombre_evento', 'sic_id', 'id_cliente', 'email_cliente', 'fecha_inicio',
         'fecha_fin', 'recinto', 'recinto_ub', 'status_evento', 'created_at'
     ];
 

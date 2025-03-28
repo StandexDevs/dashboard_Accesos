@@ -111,7 +111,7 @@
                     <div class="modal-footer">
                         <div class="mb-3">
                             <button type="button" class="btn btn-danger" id="cerrarModal" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="submit" class="btn btn-success" id="btnGuardar">Guardar cambios</button>
+                            <button type="submit" class="btn btn-success" id="btnGuardar" data-mode="registrar">Guardar cambios</button>
                         </div>
                     </div>
                 </form>
@@ -125,7 +125,6 @@
         let table;
         let selectEvento = document.getElementById("select_evento");
         let listaEventos = [];
-
 
         let id_evento = document.querySelector("#id_evento"); 
         let start_date1 = document.querySelector("#start_date1");
@@ -161,12 +160,15 @@
                 modalTitle.textContent = 'Nuevo evento';
                 document.getElementById('id_evento').value = '';  // Limpiar ID
                 document.getElementById('btnGuardar').textContent = 'Guardar nuevo';
+
             }
 
             if (modo === 'editar') {
                 const id = button.getAttribute('data-id');  // Obtener el modo
                 modalTitle.textContent = 'Editar registro';
                 document.getElementById('btnGuardar').textContent = 'Guardar cambios';
+
+                btnGuardar.setAttribute
                 console.log(id);
                 obtener_info_evento(id);
 
@@ -183,11 +185,8 @@
         const obtener_info_evento = (id) => {
             apiRequest("<?= base_url('Eventos/obtener_evento'); ?>"+"/"+id, "GET", null)
             .then(data => {
-                console.log(data)
-                const {id_evento, nombre_evento, fecha_inicio, fecha_fin, recinto, estado} = data.data;
-                console.log(nombre_evento)
-
-                infoEvento(id_evento, nombre_evento, fecha_inicio, fecha_fin, recinto, estado);
+                const {id_evento, nombre_evento, sic_id, fecha_inicio, fecha_fin, recinto, estado} = data.data;
+                infoEvento("edit", id_evento, nombre_evento, sic_id, fecha_inicio, fecha_fin, recinto, estado);
             })
             .catch(error => console.error("Error:", error));
         }
@@ -200,14 +199,28 @@
             .catch(error => console.error("Error:", error));
         }
 
-        const infoEvento = (id, evento, fecha_init, fecha_final, nm_recinto, estado) => {
-
-            id_evento.value = id;
-            selectEvento.value = evento;
+        const infoEvento = (mode, id, evento, sic_id, fecha_init, fecha_final, nm_recinto, estado) => {
             fecha_inicio.value = fecha_init;
             fecha_fin.value = fecha_final;
             recinto.value = nm_recinto;
             recinto_ub.value = estado;
+            if(mode == "edit"){
+                start_date1.value = formatFecha(fecha_init);
+                start_date2.value = formatFecha(fecha_final);
+                id_evento.value = id;
+                
+                gestionarFechasYEventos(() => {
+                    const select = document.getElementById("select_evento");
+                    const opcion = select.querySelector(`option[value="${sic_id}"]`);
+
+                    if (opcion) {
+                        opcion.selected = true;  // Marca la opción como seleccionada
+                    } else {
+                        console.warn(`No se encontró la opción con ID: ${sic_id}`);
+                    }
+
+                });
+            }
         }
 
         $(document).ready(() => {
@@ -234,48 +247,27 @@
             return fechaFormateada;
         }
 
-        $(function () {
-            // Validar fechas y limpiar select
-            $("#start_date1").on("change", function () {
-                selectEvento.innerHTML = '<option value="" disabled selected>Cargando...</option>';
-                selectEvento.value = 1;
-
+        //
+        const gestionarFechasYEventos = (callback) => {
+            $("#start_date1, #start_date2").off("change").on("change", () => {
                 const startDate1 = $("#start_date1").val();
                 const startDate2 = $("#start_date2").val();
 
-                if (startDate1 && startDate2 && startDate2 < startDate1) {
-                    Swal.fire({
-                        icon: "error",
-                        title: "Error.",
-                        text: "La fecha fin no puede ser menor que la de inicio",
-                    });
-                    $("#start_date2").val("");
-                    limpiarSelect();
-                }
-            });
-
-            $("#start_date2").on("change", function () {
-                limpiarSelect(); // Limpiar el select cuando cambie start_date2
-
-                const startDate1 = $("#start_date1").val();
-                const startDate2 = $("#start_date2").val();
-
-                if (startDate1 && startDate2 && startDate2 < startDate1) {
-                    Swal.fire({
-                        icon: "error",
-                        title: "Error.",
-                        text: "La fecha fin no puede ser menor que la de inicio",
-                    });
-                    $("#start_date2").val(""); // Limpiar fecha inválida
-                } else if (startDate1 && startDate2) {
+                if (startDate1 && startDate2) {
+                    if (startDate2 < startDate1) {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Error.",
+                            text: "La fecha fin no puede ser menor que la de inicio",
+                        });
+                        $("#start_date2").val(""); 
+                        limpiarSelect();
+                        return;
+                    }
 
                     const fechaInicio = formatFecha(startDate1);
                     const fechaFin = formatFecha(startDate2);
 
-                    fechaInit = fechaInicio;
-                    fechaFinal = fechaFin;
-
-                    // Mostrar alerta de carga mientras se obtienen los eventos
                     Swal.fire({
                         title: "Cargando eventos...",
                         html: "Por favor espere",
@@ -286,24 +278,35 @@
                     });
 
                     obtenerEventos(fechaInicio, fechaFin, (eventos) => {
-                        Swal.close(); // Cierra el Swal de carga cuando la función obtiene respuesta
+                        Swal.close();
 
-                        if (eventos.length == 0) {
+                        if (eventos.length === 0) {
                             Swal.fire({
                                 title: "No se han encontrado eventos",
                                 icon: "error",
-                                showDenyButton: true,
-                                showCancelButton: true,
                                 confirmButtonText: "Ok",
-                                confirmButtonColor: "#003DA5",
-                                denyButtonText: "No"
+                                confirmButtonColor: "#003DA5"
                             });
+                        }
+
+                        // 🔥 Ejecuta el callback después de que las opciones se han cargado
+                        if (typeof callback === "function") {
+                            callback();
                         }
                     });
                 }
-
             });
-        });
+
+            // Ejecutar la validación inicial si hay fechas seleccionadas
+            const startDate1 = $("#start_date1").val();
+            const startDate2 = $("#start_date2").val();
+            // El trigger ejecuta el evento change cuando se cumpla la condición
+            if (startDate1 && startDate2) {
+                $("#start_date1").trigger("change");
+            }
+        };
+
+        gestionarFechasYEventos();
 
         const obtenerEventos = (fechaInicio, fechaFin, callback) => {
 
@@ -337,7 +340,7 @@
 
                         const option = document.createElement('option');
                         option.value = evento.id_evento;
-                        option.text = `${evento.descripcion} (${evento.id_evento})`;
+                        option.text = `${evento.descripcion}`;
 
                         selectEvento.appendChild(option);
                     }
@@ -369,7 +372,7 @@
                 eventosSeleccionados = listaEventos.find(evento => evento.id_evento === Number(selectedEventos));                
                 const {recinto, paisEstado, inicio_evento, fin_evento} = eventosSeleccionados;
 
-                infoEvento(null, null, inicio_evento, fin_evento, recinto, paisEstado);
+                infoEvento("registrar", null, null, inicio_evento, fin_evento, recinto, paisEstado);
                 
             } else {
                 Swal.fire({
@@ -381,6 +384,10 @@
         };
 
         document.getElementById("formEvento").addEventListener("submit", (event) => {
+
+            const modo = btnGuardar.getAttribute('data-modo');  // Obtener el modo
+
+
             event.preventDefault();
 
             var formData = new FormData(event.target);
@@ -393,6 +400,7 @@
             let select = document.getElementById("select_evento");
             let selectedText = select.options[select.selectedIndex].text;
             formObject["nombre_evento"] = selectedText;
+            formObject["sic_id"] = select.value;
 
             apiRequest("<?= base_url('Eventos/guardar_evento'); ?>", "POST", formObject)
             .then(data => {

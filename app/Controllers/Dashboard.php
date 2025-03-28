@@ -37,7 +37,7 @@ class Dashboard extends BaseController{
         $query = $db->table('vista_eventos_registros')
         ->select('id_evento, nombre_evento, fecha_inicio, fecha_fin, recinto, estado, created_at, clave_evento, status');
     
-        $hoy = date('Y-m-d');
+        $hoy = date('d/m/Y H:i');
     
         return DataTable::of($query)
             ->edit('fecha_inicio', function($row) {
@@ -46,7 +46,7 @@ class Dashboard extends BaseController{
                 $inicio = $this->formatear_hora($row->fecha_inicio);
                 $fin = $this->formatear_hora($row->fecha_fin);
     
-                return '<span>'. $inicio .'</span>';
+                return '<span>'.$inicio.' - '.$fin.'</span>';
             })
             ->edit('recinto', function($row){
                 return '<span><b>'. $row->recinto.' ('.$row->estado.')</b></span>';

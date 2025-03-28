@@ -264,6 +264,16 @@
             }
         }
 
+        const formatearFecha = (fecha) => {
+            if (!fecha) return "";
+
+            const partes = fecha.split(" ");
+            if (partes.length === 2) {
+                return partes[0]; // Devuelve solo la parte de la fecha (yyyy-MM-dd)
+            }
+            return fecha; // Devuelve la fecha sin modificar si no tiene el formato esperado
+        };
+
 	</script>
 </body>
 </html>

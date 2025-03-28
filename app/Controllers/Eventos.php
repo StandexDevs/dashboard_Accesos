@@ -121,6 +121,7 @@ class Eventos extends BaseController{
             'recinto'       => $json['recinto'] ?? null,
             'recinto_ub'    => $json['recinto_ub'] ?? null,
             'nombre_evento' => $json['nombre_evento'] ?? null,
+            'sic_id'        => $json['sic_id'] ?? null,
             'id_user'       => 0,
         ];
 
@@ -167,10 +168,6 @@ class Eventos extends BaseController{
         }
 
         return $this->response->setJSON(['success' => true, 'msg' => 'Evento encontrado', 'data' => $evento]);
-
-    }
-
-    public function editar_evento($id){
 
     }
 
