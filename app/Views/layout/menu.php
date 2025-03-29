@@ -24,6 +24,7 @@
 	<meta property="og:description" content="MOPHY : Payment Admin Dashboard  Bootstrap 5 Template" />
 	<meta property="og:image" content="https://mophy.dexignzone.com/xhtml/social-image.png"/>
 	<meta name="format-detection" content="telephone=no">
+    <title><?= $this->renderSection('title'); ?></title>
     <!-- Favicon icon -->
     <!-- Vectormap -->
     <link href="<?= base_url('assets/mophy/vendor/jqvmap/css/jqvmap.min.css'); ?>" rel="stylesheet">
@@ -32,7 +33,6 @@
 	<link href="<?= base_url('assets/mophy/vendor/owl-carousel/owl.carousel.css'); ?>" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
 
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -196,15 +196,6 @@
         <!--**********************************
             Footer end
         ***********************************-->
-
-		<!--**********************************
-           Support ticket button start
-        ***********************************-->
-
-        <!--**********************************
-           Support ticket button end
-        ***********************************-->
-
 
     </div>
     <!--**********************************

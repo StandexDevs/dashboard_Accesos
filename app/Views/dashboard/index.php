@@ -111,7 +111,7 @@
                     <div class="modal-footer">
                         <div class="mb-3">
                             <button type="button" class="btn btn-danger" id="cerrarModal" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="submit" class="btn btn-success" id="btnGuardar" data-mode="registrar">Guardar cambios</button>
+                            <button type="submit" class="btn btn-success" id="btnGuardar" data-modo="nuevo">Guardar cambios</button>
                         </div>
                     </div>
                 </form>
@@ -134,7 +134,7 @@
         let recinto = document.querySelector("#recinto");
         let recinto_ub = document.querySelector("#recinto_ub");
         
-        const btnEditar = document.getElementById("btnBorrar");
+        const btnEditar = document.getElementById("btnEditar");
         const btnBorrar = document.getElementById("btnBorrar");
         const btnGuardar = document.getElementById("btnGuardar");
         const btnNuevo = document.getElementById("btnNuevo");
@@ -152,26 +152,27 @@
             selectEvento.append(new Option("Seleccione un rango de fecha", "0"));
 
             const button = event.relatedTarget;  // Botón que disparó el modal
-            const modo = button.getAttribute('data-modo');  // Obtener el modo
+            const modo = button.dataset.modo;  // Obtener el modo
             const modalTitle = document.getElementById('modal-title');
+
+            console.log(modo)
 
             if (modo === 'nuevo') {
                 // Modo nuevo
                 modalTitle.textContent = 'Nuevo evento';
                 document.getElementById('id_evento').value = '';  // Limpiar ID
                 document.getElementById('btnGuardar').textContent = 'Guardar nuevo';
-
+                document.getElementById('btnGuardar').dataset.modo = 'registrar';
             }
 
             if (modo === 'editar') {
                 const id = button.getAttribute('data-id');  // Obtener el modo
+
                 modalTitle.textContent = 'Editar registro';
                 document.getElementById('btnGuardar').textContent = 'Guardar cambios';
+                document.getElementById('btnGuardar').dataset.modo = 'editar';
 
-                btnGuardar.setAttribute
-                console.log(id);
                 obtener_info_evento(id);
-
             }
 
             // Inicializa Select2 después de añadir opciones
@@ -180,6 +181,14 @@
                 allowClear: true
             });
 
+        });
+
+        modal.addEventListener('hidden.bs.modal', () => {
+            const form = document.getElementById('formEvento');
+            form.reset();
+
+            // Limpiar campos readonly
+            form.querySelectorAll('[readonly]').forEach(input => input.value = '');
         });
 
         const obtener_info_evento = (id) => {
@@ -200,6 +209,7 @@
         }
 
         const infoEvento = (mode, id, evento, sic_id, fecha_init, fecha_final, nm_recinto, estado) => {
+
             fecha_inicio.value = fecha_init;
             fecha_fin.value = fecha_final;
             recinto.value = nm_recinto;
@@ -236,18 +246,42 @@
             selectEvento.innerHTML = "";
         }
 
+        //Formatea las fechas porque desde el server vienen en otro formato
         const formatFecha = (fechaCadena) => {
+            let dia;
+            let mes;
+            let year;
+            let horas;
+            let minutos;
+
             const fecha = new Date(fechaCadena);
 
-            const year = fecha.getFullYear();
-            const mes = String(fecha.getMonth() + 1).padStart(2, '0');
-            const dia = String(fecha.getDate()).padStart(2, '0');
-            const fechaFormateada = `${year}-${mes}-${dia}`;
+            // Verificar si la fecha tiene el formato extendido (con "T" y la hora)
+            if (fechaCadena.includes("T")) {
+                
+                dia = String(fecha.getDate()).padStart(2, '0');
+                mes = String(fecha.getMonth() + 1).padStart(2, '0');
+                year = fecha.getFullYear();
+                horas = String(fecha.getHours()).padStart(2, '0');
+                minutos = String(fecha.getMinutes()).padStart(2, '0');
 
-            return fechaFormateada;
-        }
+                return `${year}-${mes}-${dia} ${horas}:${minutos}`;
+            }
 
-        //
+
+            if (isNaN(fecha)) {
+                console.warn(`Fecha inválida: ${fechaCadena}`);
+                return "";
+            }
+
+            year = fecha.getFullYear();
+            mes = String(fecha.getMonth() + 1).padStart(2, '0');
+            dia = String(fecha.getDate()).padStart(2, '0');
+
+            return `${year}-${mes}-${dia}`;
+        };
+
+        //maneja el evento que se realiza cuando los inputs de fecha cambian su valor
         const gestionarFechasYEventos = (callback) => {
             $("#start_date1, #start_date2").off("change").on("change", () => {
                 const startDate1 = $("#start_date1").val();
@@ -289,7 +323,7 @@
                             });
                         }
 
-                        // 🔥 Ejecuta el callback después de que las opciones se han cargado
+                        // Recibimos la función opcional que 
                         if (typeof callback === "function") {
                             callback();
                         }
@@ -371,7 +405,7 @@
                 // Crear el array de eventos con los datos necesarios
                 eventosSeleccionados = listaEventos.find(evento => evento.id_evento === Number(selectedEventos));                
                 const {recinto, paisEstado, inicio_evento, fin_evento} = eventosSeleccionados;
-
+                console.log(eventosSeleccionados);
                 infoEvento("registrar", null, null, inicio_evento, fin_evento, recinto, paisEstado);
                 
             } else {
@@ -382,11 +416,10 @@
                 });
             }
         };
-
+        
         document.getElementById("formEvento").addEventListener("submit", (event) => {
 
-            const modo = btnGuardar.getAttribute('data-modo');  // Obtener el modo
-
+            const modo = btnGuardar.dataset.modo;  // Obtener el modo
 
             event.preventDefault();
 
@@ -402,22 +435,21 @@
             formObject["nombre_evento"] = selectedText;
             formObject["sic_id"] = select.value;
 
-            apiRequest("<?= base_url('Eventos/guardar_evento'); ?>", "POST", formObject)
+            apiRequest(`${"<?= base_url('Eventos/guardar_evento'); ?>"}/${modo}`, "POST", formObject)
             .then(data => {
-                const {success, message} = data;
+                console.log(data)
+                const {success, msg} = data;
 
                 if(!success){
                     Swal.fire({
-                        title: message,
-                        icon: "error",
-                        draggable: true
+                        title: msg,
+                        icon: "error"
                     });
                 }
 
                 Swal.fire({
-                    title: message,
-                    icon: "success",
-                    draggable: true
+                    title: msg,
+                    icon: "success"
                 });
 
                 table.ajax.reload();

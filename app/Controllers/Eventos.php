@@ -100,7 +100,7 @@ class Eventos extends BaseController{
         return view('eventos/registros', $data);
     }
 
-    public function guardar_evento(){
+    public function guardar_evento($modo){
         $clave = "";
         $intentos = 0;
         $EventosModel = new EventosModel();
@@ -124,6 +124,8 @@ class Eventos extends BaseController{
             'sic_id'        => $json['sic_id'] ?? null,
             'id_user'       => 0,
         ];
+
+		return $this->response->setJSON([$data, $modo]);
 
         do {
             $clave = generarClave();
