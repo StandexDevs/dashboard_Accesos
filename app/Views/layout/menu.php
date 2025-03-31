@@ -206,8 +206,8 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->	
-    <script src="<?= base_url('assets/mophy/vendor/global/global.min.js'); ?>"></script>
 	<script src="<?= base_url('assets/mophy/vendor/bootstrap-select/dist/js/bootstrap-select.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/mophy/vendor/global/global.min.js'); ?>"></script>
 	<script src="<?= base_url('assets/mophy/vendor/chart.js/Chart.bundle.min.js'); ?>"></script>
 	<script src="<?= base_url('assets/mophy/vendor/owl-carousel/owl.carousel.js'); ?>"></script>
     <script src="<?= base_url('assets/mophy/vendor/peity/jquery.peity.min.js'); ?>"></script>
@@ -215,7 +215,7 @@
     <script src="<?= base_url('assets/mophy/js/custom.min.js'); ?>"></script>
 	<script src="<?= base_url('assets/mophy/js/deznav-init.js'); ?>"></script>
     <script src="<?= base_url('assets/js/stdx_scripts.js'); ?>"></script>
-
+    <script src="<?= base_url('assets/js/pristine.js'); ?>"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

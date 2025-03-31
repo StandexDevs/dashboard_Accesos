@@ -57,22 +57,30 @@
                     <div class="modal-body">
                             <div class="tab-content" id="nav-tabContent">
                                 <input type="text" name="id_evento" id="id_evento" hidden>
+                                <input type="text" name="id_user" id="id_user" hidden>
 
                                 <div class="form-group">
                                     <div class="row ">
-                                        <div class="col-md-6 mb-3">
+                                        <div class="form-group col-md-6 mb-3">
                                             <label for="start_date1">Fecha inicio</label>
-                                            <input type="date" name="start_date1" id="start_date1" autocomplete="off" class="form-control" placeholder="DD/MM/YYYY" data-convert-date-format="1">
+                                            <input type="date" name="start_date1" id="start_date1" 
+                                                autocomplete="off" class="form-control" placeholder="DD/MM/YYYY" data-convert-date-format="1"
+                                                required data-pristine-required-message="Necesita seleccionar un rango de fecha"
+                                            >
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="form-group col-md-6">
                                             <label for="start_date2">Fecha fin</label>
-                                            <input type="date" name="start_date2" id="start_date2" autocomplete="off" class="form-control" placeholder="DD/MM/YYYY" data-convert-date-format="1">
+                                            <input type="date" name="start_date2" id="start_date2" autocomplete="off" 
+                                                class="form-control" placeholder="DD/MM/YYYY" data-convert-date-format="1"
+                                                required data-pristine-required-message="Necesita seleccionar un rango de fecha"
+                                            >
                                         </div>
                                         <div class="col-md-12">
                                             <label for="select_evento">Selecciona los eventos:</label>
-                                            <select id="select_evento" onchange="handleObtenerEventos(event)"
+                                            <select id="select_evento" name="evento" onchange="handleObtenerEventos(event)"
                                                 class="js-example-basic-multiple js-states form-control"
-                                                name="evento">
+                                                required data-pristine-required-message="Seleccione un evento"
+                                            >
                                             </select>
                                         </div>
                                     </div>
@@ -84,26 +92,36 @@
 
                                 <div class="mb-3 row">
                                     <label class="col-sm-2 col-form-label">Inicio</label>
-                                    <div class="col-sm-4">
-                                        <input type="datetime-local" class="form-control" name="fecha_inicio" id="fecha_inicio" readonly>
+                                    <div class="form-group col-sm-4">
+                                        <input 
+                                            type="datetime-local" class="form-control" name="fecha_inicio" id="fecha_inicio" 
+                                            required readonly data-pristine-required-message="La fecha de inicio es obligatoria"
+                                        >
                                     </div>
                                     <label class="col-sm-2 col-form-label">Fin</label>
-                                    <div class="col-sm-4">
-                                        <input type="datetime-local" class="form-control" name="fecha_fin" id="fecha_fin" readonly>
+                                    <div class="form-group col-sm-4">
+                                        <input type="datetime-local" class="form-control" name="fecha_fin" id="fecha_fin" 
+                                            required readonly data-pristine-required-message="La fecha de fin es obligatoria"
+                                        >
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label">Nombre del recinto</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" placeholder="Ingrese el nombre del recinto" name="recinto" id="recinto" readonly>
+                                    <div class="form-group col-sm-9">
+                                        <input type="text" class="form-control" placeholder="Ingrese el nombre del recinto" name="recinto" id="recinto" 
+                                            required readonly data-pristine-required-message="El nombre del recinto es obligatorio"
+                                        >
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label">Ubicación del recinto</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" placeholder="Ciudad, estado" name="recinto_ub" id="recinto_ub" readonly>
+                                    <div class="form-group col-sm-9">
+                                        <input type="text" class="form-control" required
+                                            placeholder="Ciudad, estado" name="recinto_ub" id="recinto_ub" readonly
+                                            data-pristine-required-message="El estado del recinto es obligatorio"
+                                        >
                                     </div>
                                 </div>
                             </div>
@@ -126,14 +144,15 @@
         let selectEvento = document.getElementById("select_evento");
         let listaEventos = [];
 
+        let id_user = document.querySelector("#id_user"); 
+        let recinto = document.querySelector("#recinto");
+        let fecha_fin = document.querySelector("#fecha_fin");
         let id_evento = document.querySelector("#id_evento"); 
+        let recinto_ub = document.querySelector("#recinto_ub");
         let start_date1 = document.querySelector("#start_date1");
         let start_date2 = document.querySelector("#start_date2");
         let fecha_inicio = document.querySelector("#fecha_inicio");
-        let fecha_fin = document.querySelector("#fecha_fin");
-        let recinto = document.querySelector("#recinto");
-        let recinto_ub = document.querySelector("#recinto_ub");
-        
+
         const btnEditar = document.getElementById("btnEditar");
         const btnBorrar = document.getElementById("btnBorrar");
         const btnGuardar = document.getElementById("btnGuardar");
@@ -154,8 +173,6 @@
             const button = event.relatedTarget;  // Botón que disparó el modal
             const modo = button.dataset.modo;  // Obtener el modo
             const modalTitle = document.getElementById('modal-title');
-
-            console.log(modo)
 
             if (modo === 'nuevo') {
                 // Modo nuevo
@@ -194,21 +211,13 @@
         const obtener_info_evento = (id) => {
             apiRequest("<?= base_url('Eventos/obtener_evento'); ?>"+"/"+id, "GET", null)
             .then(data => {
-                const {id_evento, nombre_evento, sic_id, fecha_inicio, fecha_fin, recinto, estado} = data.data;
-                infoEvento("edit", id_evento, nombre_evento, sic_id, fecha_inicio, fecha_fin, recinto, estado);
+                const {id_evento, nombre_evento, sic_id, fecha_inicio, fecha_fin, recinto, estado, id_user} = data.data;
+                infoEvento("edit", id_evento, nombre_evento, sic_id, fecha_inicio, fecha_fin, recinto, estado, id_user);
             })
             .catch(error => console.error("Error:", error));
         }
 
-        const editarCampos = (id) => {
-            apiRequest("<?= base_url('Eventos/obtener_evento'); ?>"+"/"+id, "GET", null)
-            .then(data => {
-                console.log(data)
-            })
-            .catch(error => console.error("Error:", error));
-        }
-
-        const infoEvento = (mode, id, evento, sic_id, fecha_init, fecha_final, nm_recinto, estado) => {
+        const infoEvento = (mode, id, evento, sic_id, fecha_init, fecha_final, nm_recinto, estado, id_usuario) => {
 
             fecha_inicio.value = fecha_init;
             fecha_fin.value = fecha_final;
@@ -218,6 +227,7 @@
                 start_date1.value = formatFecha(fecha_init);
                 start_date2.value = formatFecha(fecha_final);
                 id_evento.value = id;
+                id_user.value = id_usuario;
                 
                 gestionarFechasYEventos(() => {
                     const select = document.getElementById("select_evento");
@@ -404,9 +414,8 @@
             if (selectedEventos && selectedEventos.length > 0) {
                 // Crear el array de eventos con los datos necesarios
                 eventosSeleccionados = listaEventos.find(evento => evento.id_evento === Number(selectedEventos));                
-                const {recinto, paisEstado, inicio_evento, fin_evento} = eventosSeleccionados;
-                console.log(eventosSeleccionados);
-                infoEvento("registrar", null, null, inicio_evento, fin_evento, recinto, paisEstado);
+                const {recinto, paisEstado, inicio_evento, fin_evento, id_evento} = eventosSeleccionados;
+                infoEvento("registrar", null, null, id_evento, inicio_evento, fin_evento, recinto, paisEstado, 0);
                 
             } else {
                 Swal.fire({
@@ -419,12 +428,33 @@
         
         document.getElementById("formEvento").addEventListener("submit", (event) => {
 
+            event.preventDefault();  // Evita el envío del formulario
+
             const modo = btnGuardar.dataset.modo;  // Obtener el modo
+            const form = event.target;
 
-            event.preventDefault();
+            // Inicializar Pristine con configuraciones
+            const pristine = new Pristine(form, {
+                classTo: 'form-group',       
+                errorClass: 'has-error',     
+                successClass: 'has-success',
+                errorTextParent: 'form-group',
+                errorTextTag: 'div',
+                errorTextClass: 'text-danger'
+            }, true);
 
-            var formData = new FormData(event.target);
-            var formObject = {};
+            // ➡️ Validar el formulario
+            if (!pristine.validate()) {
+                Swal.fire({
+                    title: "Ingrese la información requerida",
+                    icon: "error"
+                });
+                return;  // Detiene el envío si hay errores
+            }
+
+            // Si es válido, continúa con la lógica de envío
+            const formData = new FormData(form);
+            const formObject = {};
 
             formData.forEach((value, key) => {
                 formObject[key] = value;
@@ -435,27 +465,24 @@
             formObject["nombre_evento"] = selectedText;
             formObject["sic_id"] = select.value;
 
-            apiRequest(`${"<?= base_url('Eventos/guardar_evento'); ?>"}/${modo}`, "POST", formObject)
-            .then(data => {
-                console.log(data)
-                const {success, msg} = data;
+            // Enviar la petición a la API
+            console.log(formObject);
+            return;
 
-                if(!success){
+            apiRequest(`${"<?= base_url('Eventos/guardar_evento'); ?>"}/${modo}`, "POST", formObject)
+                .then(data => {
+                    const { success, msg } = data;
+
                     Swal.fire({
                         title: msg,
-                        icon: "error"
+                        icon: success ? "success" : "error"
                     });
-                }
 
-                Swal.fire({
-                    title: msg,
-                    icon: "success"
-                });
-
-                table.ajax.reload();
-            })
-            .catch(error => console.error("Error:", error));
-
+                    if (success) {
+                        table.ajax.reload();
+                    }
+                })
+                .catch(error => console.error("Error:", error));
         });
 
 	</script>

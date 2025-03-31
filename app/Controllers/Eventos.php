@@ -109,10 +109,9 @@ class Eventos extends BaseController{
         $json = $this->request->getJSON(true);
 
         if (!$json) {
-            return $this->response->setJSON(['success' => false, 'msg' => 'No se recibieron datos', 'data' => $json ]);
+            return $this->response->setJSON(['success' => false, 'msg' => 'No se recibieron datos', 'data' => $json]);
         }
 
-        //opcion 1
         $data = [
             'id_evento'     => $json['id_evento'] ?? null,
             'evento'        => $json['evento'] ?? null,
@@ -122,8 +121,33 @@ class Eventos extends BaseController{
             'recinto_ub'    => $json['recinto_ub'] ?? null,
             'nombre_evento' => $json['nombre_evento'] ?? null,
             'sic_id'        => $json['sic_id'] ?? null,
-            'id_user'       => 0,
+            'id_user'       => $json['id_user'] ?? null
         ];
+
+        $email = "{$data['evento']}@gmail.com";
+
+        if($modo === "editar"){
+
+            $dataUser = array(
+                'first_name' => $data["nombre_evento"],
+                'last_name' => $data['evento'],
+                'email' => $email
+            );
+            
+            $updateuser = $this->ionAuth->update($data["id_user"], $dataUser);
+
+            if(!$updateuser){
+                return $this->response->setJSON(['success' => false, 'msg' => 'Error al actualizar el usuario', 'data' => $update]);        
+            }
+
+            $update = $EventosModel->update($data["id_evento"], $data);
+
+            if(!$update){
+                return $this->response->setJSON(['success' => false, 'msg' => 'Error al actualizar', 'data' => $update]);        
+            }
+
+            return $this->response->setJSON(['success' => true, 'msg' => 'Evento guardado', 'data' => $update]);
+        }
 
 		return $this->response->setJSON([$data, $modo]);
 
@@ -134,10 +158,10 @@ class Eventos extends BaseController{
                 break;
             }
         } while ($this->ionAuth->usernameCheck($clave));
-        
+                
         $username = $clave;
         $password = 'password';
-        $email = "{$data['evento']}@gmail.com"; //Recordar que el Email debe ser unico si no la libreria no te dejará registrar
+         //Recordar que el Email debe ser unico si no la libreria no te dejará registrar
         $additional_data = array(
             'first_name' => $data["nombre_evento"],
             'last_name' => $data['evento']
@@ -153,7 +177,11 @@ class Eventos extends BaseController{
         $data["id_user"] = $registro;
 
         $insert = $EventosModel->insert($data);
-        
+
+        if(!$insert){
+            return $this->response->setJSON(['success' => false, 'msg' => 'Error al guardar', 'data' => $insert]);        
+        }
+
         return $this->response->setJSON(['success' => true, 'msg' => 'Evento guardado', 'data' => $insert]);
     }
 
