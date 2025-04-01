@@ -5,16 +5,20 @@
     <?php 
         $token = bin2hex(random_bytes(16));  // Token seguro
         $_SESSION['token_evento'][$evento->id_evento] = $token;
-        echo $evento->nombre_evento 
+        echo $evento->nombre_evento;
     ?>
 <?= $this->endSection()?>
 
 <style>
-    canvas {
-        max-width: 100%;
-        max-height: 400px;
+    #ingresos_por_dia {
+        width: 100% !important; /* Fuerza el ancho */
+        height: 100% !important; /* Fuerza la altura */
     }
 
+    #ingresos_por_hora {
+        width: auto !important; /* Fuerza el ancho */
+        height: auto !important; /* Fuerza la altura */
+    }
 </style>
 
 <div class="row">
@@ -115,109 +119,204 @@
 </div>
 
 <div class="card">
-    <div class="card-body">
-        <canvas id="chartBar">
-
-        </canvas>
+    <div class="card-header d-block d-sm-flex border-0">
+        <div class="me-3">
+            <h4 class="fs-20 text-black">Flujo de accesos</h4>
+        </div>
+        <div class="card-action card-tabs mt-3 mt-sm-0">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#monthly" role="tab">General</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#Weekly" role="tab">Detallado</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-body tab-content p-0">
+        <div class="tab-pane active show fade" id="monthly" role="tabpanel">
+            <div class="card">
+                <div class="card-body">
+                    <canvas id="ingresos_por_dia"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="Weekly" role="tabpanel">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-8">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="select_dia">Seleccione el día del evento</label>
+                            <select id="select_dia" name="select_dia" placeholder="Seleccionar día"
+                                onchange="console.log(event)"
+                                class="js-example-basic-multiple js-states form-control"
+                            >
+                            </select>
+                        </div>
+                    </div>
+                    <canvas id="ingresos_por_hora"></canvas>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <script>
     const registros = <?php echo json_encode($registros); ?>;
     const id_evento = Number(<?php echo $evento->id_evento ?>);
     const base_url = "<?= base_url('Eventos/historial'); ?>";
     const token = "<?php echo $token; ?>";
-    // Agrupar registros por hora
-    const dataByHour = {};
-
-    registros.forEach(reg => {
-        const horaCompleta = reg.hour;  // Ej: "09:07:44 AM"
-        const hora = new Date(`1970-01-01 ${horaCompleta}`).getHours();
-
-        if (hora >= 8 && hora <= 20) {
-            if (!dataByHour[hora]) {
-                dataByHour[hora] = { entradas: 0, salidas: 0 };
-            }
-
-            if (reg.type === "Entrada") {
-                dataByHour[hora].entradas++;
-            } else if (reg.type === "Salida") {
-                dataByHour[hora].salidas++;
-            }
-        }
-    });
-
-    // Generar las horas de 8:00 AM a 8:00 PM
-    const horas = Array.from({ length: 13 }, (_, i) => `${i + 8}:00`);
-    const entradas = horas.map(h => dataByHour[parseInt(h)]?.entradas || 0);
-    const salidas = horas.map(h => dataByHour[parseInt(h)]?.salidas || 0);
+    const select_dia = document.querySelector("#select_dia");
+    const dias_evento = <?php echo json_encode($rango_dias); ?>;
 
     // Crear gráfica
-    const ctx = document.getElementById('chartBar').getContext('2d');
-    const chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: horas,
-            datasets: [
-                {
-                    label: 'Entradas',
-                    data: entradas,
-                    backgroundColor: 'rgba(75, 192, 192, 0.7)',
-                    borderWidth: 1
-                },
-                {
-                    label: 'Salidas',
-                    data: salidas,
-                    backgroundColor: 'rgba(255, 99, 132, 0.7)',
-                    borderWidth: 1
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    position: 'top',
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            },
-            onClick: (event) => {
-                // Detectar clic en una barra específica
-                const points = chart.getElementsAtEventForMode(event, 'nearest', { intersect: true }, true);
+    const renderizarGraficaBarras = (idCanvas, datos, tipoEjeX = 'dia') => {
+        // Extraer los valores para la gráfica
+        const etiquetas = datos.map(item => item[tipoEjeX]); // Puede ser 'dia' o 'hora'
+        const entradas = datos.map(item => item.entradas);
+        const salidas = datos.map(item => item.salidas);
 
-                if (points.length) {
-                    const index = points[0].index;  // Índice de la barra
-                    const datasetIndex = points[0].datasetIndex;  // Dataset: 0 = Entradas, 1 = Salidas
-                    const hora = horas[index];
-                    const tipo = datasetIndex === 0 ? 'Entrada' : 'Salida';
-                    const cantidad = chart.data.datasets[datasetIndex].data[index];
+        const ctx = document.getElementById(idCanvas).getContext('2d');
 
-                    location.href= `${base_url}/${id_evento}/${hora}/${tipo}`;
-                } else {
-                    // Detectar clic en el contenedor (grupo de barras)
-                    const groupPoints = chart.getElementsAtEventForMode(event, 'index', { intersect: false }, true);
-
-                    if (groupPoints.length) {
-                        const index = groupPoints[0].index; 
-                        const hora = horas[index];
-                        const entradasGrupo = entradas[index];
-                        const salidasGrupo = salidas[index];
-
-                        location.href= `${base_url}/${id_evento}/${hora}/General`;
+        return new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: etiquetas,
+                datasets: [
+                    {
+                        label: 'Entradas',
+                        data: entradas,
+                        backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Salidas',
+                        data: salidas,
+                        backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                        borderWidth: 1
                     }
-                }
-            }
-        }
-    });
+                ]
+            },
+            options: {
+                responsive: false, // Desactivar responsive
+                maintainAspectRatio: false, // Evitar que mantenga proporciones automáticas
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                onClick: (event) => {
+                            // Detectar clic en una barra específica
+                            const points = chart.getElementsAtEventForMode(event, 'nearest', { intersect: true }, true);
 
-    const consultarRegistro = (tipo) => {
-        location.href= `${base_url}/${id_evento}/todos/${tipo}`;
+                            if (points.length) {
+                                const index = points[0].index;  // Índice de la barra
+                                const datasetIndex = points[0].datasetIndex;  // Dataset: 0 = Entradas, 1 = Salidas
+                                const dia = etiquetas[index];
+                                const tipo = datasetIndex === 0 ? 'Entrada' : 'Salida';
+                                const cantidad = chart.data.datasets[datasetIndex].data[index];
+
+                                // location.href= `${base_url}/${id_evento}/${dia}/${tipo}`;
+                                console.log(`${base_url}/${id_evento}/${dia}/${tipo}`)
+                            } else {
+                                // Detectar clic en el contenedor (grupo de barras)
+                                const groupPoints = chart.getElementsAtEventForMode(event, 'index', { intersect: false }, true);
+
+                                if (groupPoints.length) {
+                                    const index = groupPoints[0].index; 
+                                    const dia = etiquetas[index];
+                                    const entradasGrupo = entradas[index];
+                                    const salidasGrupo = salidas[index];
+
+                                    // location.href= `${base_url}/${id_evento}/${dia}/General`;
+                                    console.log( `${base_url}/${id_evento}/${dia}/General`)
+                                }
+                            }
+                        }
+            }
+        });
     }
 
-    
+    const obtener_registros_por_dia = (id) => {
+        apiRequest("<?= base_url('Eventos/obtener_registros_por_dia'); ?>"+"/"+id, "GET", null)
+            .then(datos => {
+                console.log(datos)
+                renderizarGraficaBarras('ingresos_por_dia', datos, 'dia');
+            })
+            .catch(error => console.error("Error:", error));
+    }
+
+    const obtener_registros_por_hora = () => {
+        const dataByHour = {};
+
+        registros.forEach(reg => {
+            const horaCompleta = reg.hour;  // Ej: "09:07:44 AM"
+            const hora = new Date(`1970-01-01 ${horaCompleta}`).getHours();
+
+            if (hora >= 8 && hora <= 20) {
+                if (!dataByHour[hora]) {
+                    dataByHour[hora] = { entradas: 0, salidas: 0 };
+                }
+
+                if (reg.type === "Entrada") {
+                    dataByHour[hora].entradas++;
+                } else if (reg.type === "Salida") {
+                    dataByHour[hora].salidas++;
+                }
+            }
+        });
+
+        // Generar las horas de 8:00 AM a 8:00 PM
+        const horas = Array.from({ length: 13 }, (_, i) => `${i + 8}:00`);
+        const entradas = horas.map(h => dataByHour[parseInt(h)]?.entradas || 0);
+        const salidas = horas.map(h => dataByHour[parseInt(h)]?.salidas || 0);
+
+        const datosHoras = horas.map((hora, index) => ({
+            hora: hora,
+            entradas : entradas[index],
+            salidas: salidas[index]
+        }));
+
+        console.log(datosHoras)
+
+        renderizarGraficaBarras('ingresos_por_hora', datosHoras, 'hora');
+    }
+
+    const consultarRegistro = (tipo, dia) => {
+        location.href= `${base_url}/${id_evento}/todos/${tipo}/${dia}`;
+    }
+
+    $("#select_dia").select2({
+        placeholder: "Selecciona uno o más eventos",
+        allowClear: true
+    });
+
+    const obtener_dias_eventos = () => {
+        for (const dia of dias_evento) {
+            const option = document.createElement('option');
+            option.value = dia;
+            option.text = dia;
+            select_dia.appendChild(option);
+        }
+    }
+
+    obtener_dias_eventos();
+
+    $(document).ready(() => {
+        obtener_registros_por_dia(id_evento);
+        obtener_registros_por_hora();
+    });
+
 </script>
 <?= $this->endSection(); ?>

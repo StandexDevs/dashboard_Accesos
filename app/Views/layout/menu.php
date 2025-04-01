@@ -24,7 +24,6 @@
 	<meta property="og:description" content="MOPHY : Payment Admin Dashboard  Bootstrap 5 Template" />
 	<meta property="og:image" content="https://mophy.dexignzone.com/xhtml/social-image.png"/>
 	<meta name="format-detection" content="telephone=no">
-    <title><?= $this->renderSection('title'); ?></title>
     <!-- Favicon icon -->
     <!-- Vectormap -->
     <link href="<?= base_url('assets/mophy/vendor/jqvmap/css/jqvmap.min.css'); ?>" rel="stylesheet">
@@ -33,6 +32,7 @@
 	<link href="<?= base_url('assets/mophy/vendor/owl-carousel/owl.carousel.css'); ?>" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -197,6 +197,15 @@
             Footer end
         ***********************************-->
 
+		<!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
     </div>
     <!--**********************************
         Main wrapper end
@@ -206,8 +215,8 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->	
-	<script src="<?= base_url('assets/mophy/vendor/bootstrap-select/dist/js/bootstrap-select.min.js'); ?>"></script>
     <script src="<?= base_url('assets/mophy/vendor/global/global.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/mophy/vendor/bootstrap-select/dist/js/bootstrap-select.min.js'); ?>"></script>
 	<script src="<?= base_url('assets/mophy/vendor/chart.js/Chart.bundle.min.js'); ?>"></script>
 	<script src="<?= base_url('assets/mophy/vendor/owl-carousel/owl.carousel.js'); ?>"></script>
     <script src="<?= base_url('assets/mophy/vendor/peity/jquery.peity.min.js'); ?>"></script>
@@ -215,7 +224,7 @@
     <script src="<?= base_url('assets/mophy/js/custom.min.js'); ?>"></script>
 	<script src="<?= base_url('assets/mophy/js/deznav-init.js'); ?>"></script>
     <script src="<?= base_url('assets/js/stdx_scripts.js'); ?>"></script>
-    <script src="<?= base_url('assets/js/pristine.js'); ?>"></script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -226,7 +235,7 @@
     <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
 	<script>
 
-        const apiRequest = async (url, metodo = "GET", data = null) => {
+        async function apiRequest(url, metodo = "GET", data = null) {
             try {
                 const options = {
                     method: metodo,
@@ -254,16 +263,6 @@
                 throw error;
             }
         }
-
-        const formatearFecha = (fecha) => {
-            if (!fecha) return "";
-
-            const partes = fecha.split(" ");
-            if (partes.length === 2) {
-                return partes[0]; // Devuelve solo la parte de la fecha (yyyy-MM-dd)
-            }
-            return fecha; // Devuelve la fecha sin modificar si no tiene el formato esperado
-        };
 
 	</script>
 </body>

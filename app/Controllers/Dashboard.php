@@ -35,9 +35,10 @@ class Dashboard extends BaseController{
     public function eventos_registrados(){
         $db = db_connect();
         $query = $db->table('vista_eventos_registros')
-        ->select('id_evento, nombre_evento, fecha_inicio, fecha_fin, recinto, estado, created_at, clave_evento, status');
+        ->select('id_evento, nombre_evento, fecha_inicio, fecha_fin, recinto, estado, created_at, clave_evento, status')
+        ->where('status', 1);
     
-        $hoy = date('d/m/Y H:i');
+        $hoy = strtotime(date('Y-m-d H:i'));
     
         return DataTable::of($query)
             ->edit('fecha_inicio', function($row) {
@@ -53,9 +54,9 @@ class Dashboard extends BaseController{
             })
             ->edit('status', function($row) use ($hoy) {
 
-                $inicio = $this->formatear_hora($row->fecha_inicio);
-                $fin = $this->formatear_hora($row->fecha_fin);
-    
+                $inicio = strtotime($row->fecha_inicio);
+                $fin = strtotime($row->fecha_fin);
+
                 if ($hoy < $inicio) {
                     $estado = 'Próximo';
                     $btn_class = 'btn-primary';
@@ -67,12 +68,13 @@ class Dashboard extends BaseController{
                     $btn_class = 'btn-success';
                 }
     
-                return '
-                <a 
-                    href="'. base_url('Eventos/index/' . esc($row->id_evento, 'url')) .'"
-                    class="btn '.$btn_class.' btn-rounded"
-                    title="Del '.$inicio.' al '.$fin.'"
-                >'.$estado.'</a>';
+                return '<a 
+                        href="'. base_url('Eventos/index/' . esc($row->id_evento, 'url')) .'"
+                        class="btn '.$btn_class.' btn-rounded"
+                        title="Del '.$this->formatear_hora($row->fecha_inicio).' al '.$this->formatear_hora($row->fecha_fin).'"
+                    >'.$estado.
+                '</a>';
+
             }, 'last')
             ->add('action', function($row){
                 return '
@@ -84,7 +86,7 @@ class Dashboard extends BaseController{
                         data-bs-target=".bd-example-modal-lg" data-modo="editar" id="btnEditar" data-id="'. $row->id_evento .'">
                             <i class="bi bi-pencil-square"></i>
                         </button>
-                        <button type="button" class="btn btn-danger" id="btnBorrar" data-id="'. $row->id_evento .'">
+                        <button type="button" class="btn btn-danger" onclick="borrarEvento(this)" id="btnBorrar" data-id="'. $row->id_evento .'">
                             <i class="bi bi-trash"></i>
                         </button>
                     </div>';

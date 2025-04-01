@@ -117,4 +117,38 @@
         }
     }
 
+    if (!function_exists('obtener_dias_evento')) {
+        function obtener_dias_evento($fechaInicio, $fechaFin) {
+            $dias = [];
+            
+            // Crear objetos DateTime
+            $inicio = DateTime::createFromFormat('d/m/Y H:i', $fechaInicio);
+            $fin = DateTime::createFromFormat('d/m/Y H:i', $fechaFin);
+        
+            // Verificar si las fechas son válidas
+            if (!$inicio || !$fin) {
+                return "Formato de fecha incorrecto";
+            }
+        
+            // Asegurar que el rango sea correcto
+            if ($inicio > $fin) {
+                return "La fecha de inicio debe ser menor a la fecha de fin.";
+            }
+        
+            // Iterar sobre los días del rango
+            while ($inicio <= $fin) {
+                $dias[] = $inicio->format('d/m/Y'); // Agregar la fecha en formato día/mes/año
+                $inicio->modify('+1 day'); // Sumar un día
+            }
+        
+            return $dias;
+        }    
+    }
+
+    if (!function_exists('formatear_hora')) {
+        function formatear_hora($hora){
+            $hora_formateada = date('d/m/Y H:i', strtotime($hora));
+            return $hora_formateada;
+        }
+    }
 ?>

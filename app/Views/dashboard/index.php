@@ -160,6 +160,14 @@
 
         const modal = document.querySelector(".bd-example-modal-lg");
 
+        $(document).ready(() => {
+            table = $('#eventosTable').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: "<?= base_url('Dashboard/eventos_registrados'); ?>"
+            });
+        });
+
         modal.addEventListener('show.bs.modal', (event) => {
 
             const selectEvento = $('#select_evento');  // Usar jQuery
@@ -193,8 +201,8 @@
             }
 
             // Inicializa Select2 después de añadir opciones
-            selectEvento.select2({
-                placeholder: "Selecciona uno o más eventos",
+            $("#select_evento").select2({
+                placeholder: "Seleccione el día",
                 allowClear: true
             });
 
@@ -242,14 +250,6 @@
                 });
             }
         }
-
-        $(document).ready(() => {
-            table = $('#eventosTable').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: "<?= base_url('Dashboard/eventos_registrados'); ?>"
-            });
-        });
 
         const limpiarSelect = () => {
             $("#select_evento").val("")
@@ -484,6 +484,57 @@
                 })
                 .catch(error => console.error("Error:", error));
         });
+
+        const borrarEvento = (btn) => {
+            const id = btn.dataset.id;
+
+            apiRequest("<?= base_url('Eventos/obtener_evento'); ?>"+"/"+id, "DELETE", null)
+            .then(data => {
+
+                const {id_evento, nombre_evento} = data.data;
+
+                Swal.fire({
+                    title: `¿Desea eliminar el evento ${nombre_evento}?`,
+                    text: "No podrá acceder a la información",
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Si!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        apiRequest("<?= base_url('Eventos/eliminar_evento'); ?>"+"/"+id_evento, "DELETE", null)
+                        .then(data => {
+
+                            Swal.fire({
+                                title: "Exito!",
+                                text: "Se ha eliminado el evento.",
+                                icon: "success"
+                            });
+
+                            table.ajax.reload();
+
+                        })
+                        .catch(error => {
+                            Swal.fire({
+                                    title: "Error!",
+                                    text: "Error.",
+                                    icon: "error"
+                                });
+                            console.error("Error:", error)
+                        });
+                    }
+                });
+            })
+            .catch(error => {
+                Swal.fire({
+                        title: "Error!",
+                        text: "Error al buscar la info del evento.",
+                        icon: "error"
+                    });
+                console.error("Error:", error)
+            });
+        }
 
 	</script>
 
