@@ -220,7 +220,6 @@
 	<script src="<?= base_url('assets/mophy/vendor/chart.js/Chart.bundle.min.js'); ?>"></script>
 	<script src="<?= base_url('assets/mophy/vendor/owl-carousel/owl.carousel.js'); ?>"></script>
     <script src="<?= base_url('assets/mophy/vendor/peity/jquery.peity.min.js'); ?>"></script>
-	<script src="<?= base_url('assets/mophy/js/dashboard/dashboard-1.js'); ?>"></script>
     <script src="<?= base_url('assets/mophy/js/custom.min.js'); ?>"></script>
 	<script src="<?= base_url('assets/mophy/js/deznav-init.js'); ?>"></script>
     <script src="<?= base_url('assets/js/stdx_scripts.js'); ?>"></script>

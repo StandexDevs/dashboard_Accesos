@@ -7,6 +7,7 @@ use IonAuth\Libraries\IonAuth;
 use App\Models\InputsOutputsModel;
 use \Hermawan\DataTables\DataTable;
 helper('eventos_helper');
+helper('reportes_helper');
 
 class Eventos extends BaseController{
     protected $ionAuth;
@@ -52,12 +53,11 @@ class Eventos extends BaseController{
         return view('eventos/index', $data);
     }
 
-    public function historial($id_evento, $hora, $tipo){
+    public function historial($id_evento, $label, $tipo){
         
         // return $this->response->setJSON([$id_evento, $hora, $tipo, $dia]);
 
         $inputsOutputsModel = new InputsOutputsModel();
-        $token = $this->request->getGet('token');
         $tipoRegistro = null;
 
         if (!$this->ionAuth->loggedIn()) {
@@ -72,27 +72,28 @@ class Eventos extends BaseController{
         }
 
         $registros = $inputsOutputsModel->where('id_evento', $id_evento);
-        
-        if($hora !== 'todos'){
 
-            $hora_formateada = date('H:i:s', strtotime($hora));
-            $hora_inicio = $hora_formateada;
-            $hora_fin = date('H:i:s', strtotime($hora_formateada) + 3599); // 16:59:59
+        // Manejo de fechas y horas
+        if (preg_match('/^\d{8}$/', $label)) {
+            // Es una fecha en formato ddmmyyyy
+            $day = substr($label, 0, 2);
+            $month = substr($label, 2, 2);
+            $year = substr($label, 4, 4);
 
-            $inputsOutputsModel
-                ->where('hour >=', $hora_inicio)
+            $registros = $registros
+                ->where('day', $day)
+                ->where('month', $month)
+                ->where('year', $year);
+        } elseif (preg_match('/^\d{2}:\d{2}$/', $label)) {
+            // Es una hora en formato hh:mm
+            $hora_formateada = date('H:i:s', strtotime($label));
+            $hora_fin = date('H:i:s', strtotime($hora_formateada) + 3599); // 1 hora después
+
+            $registros = $registros
+                ->where('hour >=', $hora_formateada)
                 ->where('hour <=', $hora_fin);
-        }
-
-        if($dia !== 'todos'){
-
-            $hora_formateada = date('H:i:s', strtotime($hora));
-            $hora_inicio = $hora_formateada;
-            $hora_fin = date('H:i:s', strtotime($hora_formateada) + 3599); // 16:59:59
-
-            $inputsOutputsModel
-                ->where('hour >=', $hora_inicio)
-                ->where('hour <=', $hora_fin);
+        } elseif($label !== "todos"){
+            return $this->response->setStatusCode(400)->setJSON(['error' => 'Parámetro inválido']);
         }
 
         if($tipo != 'General'){
@@ -106,14 +107,18 @@ class Eventos extends BaseController{
             ->orderBy('hour', 'DESC')
             ->findAll();
 
-        
         if (!$registros) {
             return $this->response->setStatusCode(404, 'No hay registros para este evento');
         }
+
+        $evento = obtener_info_evento($id_evento);
         
+        $excelData = exportar_historial_excel($registros, $evento->nombre_evento);
+
         $data["tipo"] = $tipo;
         $data["registros"] = $registros;
-        $data["evento"] = obtener_info_evento($id_evento);
+        $data["reporte"] = base64_encode($excelData);
+        $data["evento"] = $evento;
 
         return view('eventos/registros', $data);
     }
@@ -239,7 +244,7 @@ class Eventos extends BaseController{
         return $this->response->setJSON(['success' => true, 'msg' => 'Evento eliminado', 'data' => $update]);
     }
 
-    public function obtener_registros_por_dia($id_evento) {
+    public function obtener_registros_general($id_evento) {
         $inputsOutputsModel = new InputsOutputsModel();
     
         // Obtener los días únicos donde hay registros para el evento
@@ -287,47 +292,8 @@ class Eventos extends BaseController{
         return $this->response->setJSON($resultados);
     }
     
-    public function obtener_registros_por_hora($id_evento, $dia) {
-        $inputsOutputsModel = new InputsOutputsModel();
-    
-        // Obtener las horas únicas del día para el evento
-        $horas_disponibles = $inputsOutputsModel
-            ->select("DATE_FORMAT(time, '%H:00') as hora") // Extraer solo la hora
-            ->where('id_evento', $id_evento)
-            ->where('day', $dia)
-            ->groupBy('hora')
-            ->findAll();
-    
-        $resultados = [];
-    
-        foreach ($horas_disponibles as $hora) {
-            $hora_actual = $hora['hora'];
-    
-            // Contar registros de tipo "Entrada" en esa hora
-            $entradas = $inputsOutputsModel
-                ->where('id_evento', $id_evento)
-                ->where('day', $dia)
-                ->where("DATE_FORMAT(time, '%H:00')", $hora_actual)
-                ->where('type', 'Entrada')
-                ->countAllResults();
-    
-            // Contar registros de tipo "Salida" en esa hora
-            $salidas = $inputsOutputsModel
-                ->where('id_evento', $id_evento)
-                ->where('day', $dia)
-                ->where("DATE_FORMAT(time, '%H:00')", $hora_actual)
-                ->where('type', 'Salida')
-                ->countAllResults();
-    
-            // Guardar resultados en un array
-            $resultados[] = [
-                'hora' => $hora_actual,
-                'entradas' => $entradas,
-                'salidas' => $salidas
-            ];
-        }
-
+    public function obtener_registros_por_dia($id_evento, $dia) {
+        $resultados = obtener_registros($id_evento, $dia);
         return $this->response->setJSON($resultados);
     }
-
 }

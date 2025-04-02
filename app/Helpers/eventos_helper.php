@@ -110,10 +110,20 @@
     }
 
     if (!function_exists('obtener_registros')) {
-        function obtener_registros($id){
+        function obtener_registros($id, $fecha = null){
             $db = \Config\Database::connect();
-            $query = $db->table('inputs_outputs')->where('id_evento', $id)->get()->getResult();
-            return $query;
+            $query = $db->table('inputs_outputs')->where('id_evento', $id);
+            if($fecha !== null){
+                $day = substr($fecha, 0, 2);
+                $month = substr($fecha, 2, 2);
+                $year = substr($fecha, 4, 4);
+                
+                $query->where('day', $day)
+                    ->where('month', $month)
+                    ->where('year', $year);
+            }
+            $resultado = $query->get()->getResult();
+            return $resultado;
         }
     }
 

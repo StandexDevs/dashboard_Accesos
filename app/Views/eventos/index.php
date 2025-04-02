@@ -3,8 +3,6 @@
 <?= $this->section('content')?>
 <?= $this->section('title')?>
     <?php 
-        $token = bin2hex(random_bytes(16));  // Token seguro
-        $_SESSION['token_evento'][$evento->id_evento] = $token;
         echo $evento->nombre_evento;
     ?>
 <?= $this->endSection()?>
@@ -151,7 +149,7 @@
                         <div class="col-sm-4">
                             <label for="select_dia">Seleccione el día del evento</label>
                             <select id="select_dia" name="select_dia" placeholder="Seleccionar día"
-                                onchange="console.log(event)"
+                                onchange="obtener_registros_por_hora(event.target.value)"
                                 class="js-example-basic-multiple js-states form-control"
                             >
                             </select>
@@ -168,23 +166,33 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <script>
-    const registros = <?php echo json_encode($registros); ?>;
+    let registros = {};//aqui se guardan los registros de horas
+    let graficas = {};//aqui se guardan las graficas
     const id_evento = Number(<?php echo $evento->id_evento ?>);
     const base_url = "<?= base_url('Eventos/historial'); ?>";
-    const token = "<?php echo $token; ?>";
     const select_dia = document.querySelector("#select_dia");
     const dias_evento = <?php echo json_encode($rango_dias); ?>;
 
+    const formatearLabel = (label) => {
+        const labelFormateado = label.includes("/") ? label.replace(/\//g, "") : label;
+        return labelFormateado;
+    }
     // Crear gráfica
     const renderizarGraficaBarras = (idCanvas, datos, tipoEjeX = 'dia') => {
+
+        //
+        if (graficas[idCanvas]) {
+            graficas[idCanvas].destroy();
+        }
+
         // Extraer los valores para la gráfica
         const etiquetas = datos.map(item => item[tipoEjeX]); // Puede ser 'dia' o 'hora'
         const entradas = datos.map(item => item.entradas);
         const salidas = datos.map(item => item.salidas);
 
         const ctx = document.getElementById(idCanvas).getContext('2d');
-
-        return new Chart(ctx, {
+        
+        const chart = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: etiquetas,
@@ -204,8 +212,8 @@
                 ]
             },
             options: {
-                responsive: false, // Desactivar responsive
-                maintainAspectRatio: false, // Evitar que mantenga proporciones automáticas
+                responsive: false,
+                maintainAspectRatio: false,
                 plugins: {
                     legend: {
                         position: 'top',
@@ -217,70 +225,77 @@
                     }
                 },
                 onClick: (event) => {
-                            // Detectar clic en una barra específica
-                            const points = chart.getElementsAtEventForMode(event, 'nearest', { intersect: true }, true);
+                    const points = chart.getElementsAtEventForMode(event, 'nearest', { intersect: true }, true);
 
-                            if (points.length) {
-                                const index = points[0].index;  // Índice de la barra
-                                const datasetIndex = points[0].datasetIndex;  // Dataset: 0 = Entradas, 1 = Salidas
-                                const dia = etiquetas[index];
-                                const tipo = datasetIndex === 0 ? 'Entrada' : 'Salida';
-                                const cantidad = chart.data.datasets[datasetIndex].data[index];
+                    if (points.length) {
+                        const index = points[0]._index;
+                        const datasetIndex = points[0]._datasetIndex;
+                        const label = formatearLabel(chart.data.labels[index]); // obtencion y formateo del label
+                        const tipo = datasetIndex === 0 ? 'Entrada' : 'Salida';
 
-                                // location.href= `${base_url}/${id_evento}/${dia}/${tipo}`;
-                                console.log(`${base_url}/${id_evento}/${dia}/${tipo}`)
-                            } else {
-                                // Detectar clic en el contenedor (grupo de barras)
-                                const groupPoints = chart.getElementsAtEventForMode(event, 'index', { intersect: false }, true);
+                        window.location.replace(`${base_url}/${id_evento}/${label}/${tipo}`);
+                        
+                    } else {
+                        const groupPoints = chart.getElementsAtEventForMode(event, 'index', { intersect: false }, true);
+                        if (groupPoints.length) {
 
-                                if (groupPoints.length) {
-                                    const index = groupPoints[0].index; 
-                                    const dia = etiquetas[index];
-                                    const entradasGrupo = entradas[index];
-                                    const salidasGrupo = salidas[index];
+                            const index = groupPoints[0]._index;
+                            const datasetIndex = groupPoints[0]._datasetIndex;
+                            const label = formatearLabel(chart.data.labels[index]); // obtencion y formateo del label
 
-                                    // location.href= `${base_url}/${id_evento}/${dia}/General`;
-                                    console.log( `${base_url}/${id_evento}/${dia}/General`)
-                                }
-                            }
+                            window.location.replace(`${base_url}/${id_evento}/${label}/General`);
                         }
+                    }
+                }
             }
         });
+        graficas[idCanvas] = chart;
+        return chart;
     }
 
-    const obtener_registros_por_dia = (id) => {
-        apiRequest("<?= base_url('Eventos/obtener_registros_por_dia'); ?>"+"/"+id, "GET", null)
+    const obtener_registros_general = (id) => {
+        apiRequest("<?= base_url('Eventos/obtener_registros_general'); ?>"+"/"+id, "GET", null)
+        .then(datos => {
+            console.log(datos)
+            renderizarGraficaBarras('ingresos_por_dia', datos, 'dia');
+        })
+        .catch(error => console.error("Error:", error));
+    }
+
+    const obtener_registros_por_hora = (fecha = null) => {
+        const dataPorHora = {};
+
+        if(fecha != null){
+            apiRequest(`${"<?= base_url('Eventos/obtener_registros_por_dia'); ?>"}/${id_evento}/${fecha}`, "GET", null)
             .then(datos => {
-                console.log(datos)
-                renderizarGraficaBarras('ingresos_por_dia', datos, 'dia');
+                registros = datos;
             })
             .catch(error => console.error("Error:", error));
-    }
-
-    const obtener_registros_por_hora = () => {
-        const dataByHour = {};
+        }else{
+            registros = <?php echo json_encode($registros); ?>;
+        }
 
         registros.forEach(reg => {
-            const horaCompleta = reg.hour;  // Ej: "09:07:44 AM"
+            const horaCompleta = reg.hour;
             const hora = new Date(`1970-01-01 ${horaCompleta}`).getHours();
 
             if (hora >= 8 && hora <= 20) {
-                if (!dataByHour[hora]) {
-                    dataByHour[hora] = { entradas: 0, salidas: 0 };
+                if (!dataPorHora[hora]) {
+                    dataPorHora[hora] = { entradas: 0, salidas: 0 };
                 }
 
                 if (reg.type === "Entrada") {
-                    dataByHour[hora].entradas++;
+                    dataPorHora[hora].entradas++;
                 } else if (reg.type === "Salida") {
-                    dataByHour[hora].salidas++;
+                    dataPorHora[hora].salidas++;
                 }
             }
         });
 
         // Generar las horas de 8:00 AM a 8:00 PM
         const horas = Array.from({ length: 13 }, (_, i) => `${i + 8}:00`);
-        const entradas = horas.map(h => dataByHour[parseInt(h)]?.entradas || 0);
-        const salidas = horas.map(h => dataByHour[parseInt(h)]?.salidas || 0);
+        const entradas = horas.map(h => dataPorHora[parseInt(h)]?.entradas || 0);
+        const salidas = horas.map(h => dataPorHora[parseInt(h)]?.salidas || 0);
 
         const datosHoras = horas.map((hora, index) => ({
             hora: hora,
@@ -288,13 +303,11 @@
             salidas: salidas[index]
         }));
 
-        console.log(datosHoras)
-
         renderizarGraficaBarras('ingresos_por_hora', datosHoras, 'hora');
     }
 
-    const consultarRegistro = (tipo, dia) => {
-        location.href= `${base_url}/${id_evento}/todos/${tipo}/${dia}`;
+    const consultarRegistro = (tipo) => {
+        location.href= `${base_url}/${id_evento}/todos/${tipo}/`;
     }
 
     $("#select_dia").select2({
@@ -305,16 +318,15 @@
     const obtener_dias_eventos = () => {
         for (const dia of dias_evento) {
             const option = document.createElement('option');
-            option.value = dia;
+            option.value = formatearLabel(dia);
             option.text = dia;
             select_dia.appendChild(option);
         }
     }
 
-    obtener_dias_eventos();
-
     $(document).ready(() => {
-        obtener_registros_por_dia(id_evento);
+        obtener_dias_eventos();
+        obtener_registros_general(id_evento);
         obtener_registros_por_hora();
     });
 
