@@ -3,22 +3,26 @@
 <?= $this->section('title')?>
     <?php 
         echo $evento->nombre_evento;
+        $tipoBitacora = $tipo === "General" ? "{$tipo}" :"de {$tipo}" ;
     ?>
+    
+    <span class="fs-14 text-primary" onclick="window.history.go(-1)">regresar</span>
+
 <?= $this->endSection()?>
     <div class="card">
         <div class="card-header d-block d-sm-flex border-0">
-            <h4 class="fs-20 text-black">Bitacora de <?php echo $tipo?></h4>
+            <h4 class="fs-20 text-black">Bitacora <?php echo $tipoBitacora?></h4>
         </div>
         <div class="card-body tab-content p-0">
             <div class="tab-pane active show fade" role="tabpanel">
                 <div class="table-responsive">
                     <table class="table table-responsive-md card-table previous-transactions" id="registros_table" style="width: 100%">
                         <thead>
+                            <th>Participante</th>
                             <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th>Fecha</th>
+                            <th>Acceso</th>
+                            <th>Tipo de registro</th>
                         </thead>
                         <tbody>
                             

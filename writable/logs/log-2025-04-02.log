@@ -1,0 +1,6 @@
+CRITICAL - 2025-04-02 17:45:23 --> Call to undefined function App\Controllers\desencriptarEvento()
+#0 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(832): App\Controllers\Eventos->index('3247476b3478374...')
+#1 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Eventos))
+#2 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\ProgramadorTech\Documents\AppsWeb\controlAccesos\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}

@@ -292,70 +292,74 @@
         };
 
         //maneja el evento que se realiza cuando los inputs de fecha cambian su valor
+        let eventosFrame;
+
         const gestionarFechasYEventos = (callback) => {
             $("#start_date1, #start_date2").off("change").on("change", () => {
-                const startDate1 = $("#start_date1").val();
-                const startDate2 = $("#start_date2").val();
+                cancelAnimationFrame(eventosFrame); //evita llamadas duplicadas si la fecha cambia
+                
+                //requestAnimationFrame() solo ejecuta obtenerEventos() cuando el navegador este listo
+                eventosFrame = requestAnimationFrame(() => {
+                    const startDate1 = $("#start_date1").val();
+                    const startDate2 = $("#start_date2").val();
 
-                if (startDate1 && startDate2) {
-                    if (startDate2 < startDate1) {
-                        Swal.fire({
-                            icon: "error",
-                            title: "Error.",
-                            text: "La fecha fin no puede ser menor que la de inicio",
-                        });
-                        $("#start_date2").val(""); 
-                        limpiarSelect();
-                        return;
-                    }
-
-                    const fechaInicio = formatFecha(startDate1);
-                    const fechaFin = formatFecha(startDate2);
-
-                    Swal.fire({
-                        title: "Cargando eventos...",
-                        html: "Por favor espere",
-                        allowOutsideClick: false,
-                        didOpen: () => {
-                            Swal.showLoading();
-                        }
-                    });
-
-                    obtenerEventos(fechaInicio, fechaFin, (eventos) => {
-                        Swal.close();
-
-                        if (eventos.length === 0) {
+                    if (startDate1 && startDate2) {
+                        if (startDate2 < startDate1) {
                             Swal.fire({
-                                title: "No se han encontrado eventos",
                                 icon: "error",
-                                confirmButtonText: "Ok",
-                                confirmButtonColor: "#003DA5"
+                                title: "Error.",
+                                text: "La fecha fin no puede ser menor que la de inicio",
                             });
+                            $("#start_date2").val("");
+                            limpiarSelect();
+                            return;
                         }
 
-                        // Recibimos la función opcional que 
-                        if (typeof callback === "function") {
-                            callback();
-                        }
-                    });
-                }
+                        const fechaInicio = formatFecha(startDate1);
+                        const fechaFin = formatFecha(startDate2);
+
+                        Swal.fire({
+                            title: "Cargando eventos...",
+                            html: "Por favor espere",
+                            allowOutsideClick: false,
+                            didOpen: () => {
+                                Swal.showLoading();
+                            }
+                        });
+
+                        obtenerEventos(fechaInicio, fechaFin, (eventos) => {
+                            Swal.close();
+
+                            if (eventos.length === 0) {
+                                Swal.fire({
+                                    title: "No se han encontrado eventos",
+                                    icon: "error",
+                                    confirmButtonText: "Ok",
+                                    confirmButtonColor: "#003DA5"
+                                });
+                            }
+
+                            if (typeof callback === "function") {
+                                callback();
+                            }
+                        });
+                    }
+                });
             });
 
             // Ejecutar la validación inicial si hay fechas seleccionadas
             const startDate1 = $("#start_date1").val();
             const startDate2 = $("#start_date2").val();
-            // El trigger ejecuta el evento change cuando se cumpla la condición
             if (startDate1 && startDate2) {
                 $("#start_date1").trigger("change");
             }
         };
 
-        gestionarFechasYEventos();
+        gestionarFechasYEventos();//ejecutamos esta función para que esté atento a los inputs de fecha
 
         const obtenerEventos = (fechaInicio, fechaFin, callback) => {
 
             selectEvento.innerHTML = '<option value="-1" disabled selected>Cargando...</option>';
-            selectEvento.value = -1;
 
             const requestData = {
                 descripcion: "",
@@ -378,7 +382,7 @@
                         });
                     }
 
-                    listaEventos = response;
+                    listaEventos = response;//llenando la lista de eventos con el rispons
 
                     for (const evento of response) {
 
@@ -390,7 +394,7 @@
                     }
 
                     
-                    //hacemos un callback porque quien sa
+                    //hacemos un callback por si se les antoja hacer algo con los datos
                     if (callback) {
                         callback(listaEventos);
                     }

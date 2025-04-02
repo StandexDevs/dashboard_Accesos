@@ -73,7 +73,7 @@ class Eventos extends BaseController{
 
         $registros = $inputsOutputsModel->where('id_evento', $id_evento);
 
-        // Manejo de fechas y horas
+        // Verificar si lo que recibe es una hora o es una fecha
         if (preg_match('/^\d{8}$/', $label)) {
             // Es una fecha en formato ddmmyyyy
             $day = substr($label, 0, 2);
@@ -96,7 +96,7 @@ class Eventos extends BaseController{
             return $this->response->setStatusCode(400)->setJSON(['error' => 'Parámetro inválido']);
         }
 
-        if($tipo != 'General'){
+        if($tipo != 'General'){//especificando el tipo de acceso
             $inputsOutputsModel->where('type', $tipoRegistro);
         }
 
@@ -112,7 +112,6 @@ class Eventos extends BaseController{
         }
 
         $evento = obtener_info_evento($id_evento);
-        
         $excelData = exportar_historial_excel($registros, $evento->nombre_evento);
 
         $data["tipo"] = $tipo;

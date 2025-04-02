@@ -7,6 +7,7 @@ use IonAuth\Libraries\IonAuth;
 use CodeIgniter\API\ResponseTrait;
 use \Hermawan\DataTables\DataTable;
 helper('eventos_helper');
+helper('token_helper');
 
 class Dashboard extends BaseController{
     protected $ionAuth; 
