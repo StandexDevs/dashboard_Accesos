@@ -90,7 +90,11 @@
 
                         </div>
                         <ul class="navbar-nav header-right">
-
+                            <li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link bell bell-link" href="javascript:void(0)" id="btnTema" onclick="fnCambiarColor()">
+                                    <i class="bi bi-palette-fill"></i>
+                                </a>
+							</li>
                             <li class="nav-item dropdown header-profile">
                                 <a class="nav-link" href="javascript:void(0)" role="button" data-bs-toggle="dropdown">
 									<div class="header-info">
@@ -262,6 +266,27 @@
                 throw error;
             }
         }
+
+        const fnCambiarColor = (callback) => {
+            if (window.localStorage) {
+                const body = $('body');
+                let tmpTema = window.localStorage.getItem('theme-version');
+                
+                if (tmpTema == null || tmpTema == "") { 
+                    tmpTema = body.data('theme-version');
+                }
+                
+                if (tmpTema === "dark" || tmpTema === "light") {
+                    if (tmpTema === "dark") {
+                        window.localStorage.setItem('theme-version', "light");
+                        body.attr("data-theme-version", "light");
+                    } else if (tmpTema === "light") {
+                        window.localStorage.setItem('theme-version', "dark");
+                        body.attr("data-theme-version", "dark");
+                    }
+                }
+            }
+        };
 
 	</script>
 </body>

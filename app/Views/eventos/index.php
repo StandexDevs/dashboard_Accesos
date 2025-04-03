@@ -8,19 +8,15 @@
 <?= $this->endSection()?>
 
 <style>
-    #ingresos_por_dia {
-        width: 100% !important; /* Fuerza el ancho */
-        height: 100% !important; /* Fuerza la altura */
-    }
-
-    #ingresos_por_hora {
-        width: auto !important; /* Fuerza el ancho */
-        height: auto !important; /* Fuerza la altura */
+    #ingresos_por_dia, #ingresos_por_hora {
+        max-width: 95vw;
+        height: 25vh; /* Ajusta según necesidad */
+        margin: auto; /* Centrar */
     }
 </style>
 
 <div class="row">
-    <div class="col-xl-3 col-sm-3">
+    <div class="col-xl-3 col-md-4 col-sm-6">
         <div class="card">
             <div class="card-body">
                 <div class="media align-items-center invoice-card" onclick="consultarRegistro('General')">
@@ -39,7 +35,7 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-3 col-sm-3">
+    <div class="col-xl-3 col-md-4 col-sm-6">
         <div class="card">
             <div class="card-body">
                 <div class="media align-items-center invoice-card" onclick="consultarRegistro('Entrada')">
@@ -67,7 +63,7 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-3 col-sm-3">
+    <div class="col-xl-3 col-md-4 col-sm-6">
         <div class="card">
             <div class="card-body">
                 <div class="media align-items-center invoice-card" onclick="consultarRegistro('Salida')">
@@ -95,7 +91,7 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-3 col-sm-3">
+    <div class="col-xl-3 col-md-4 col-sm-6">
         <div class="card">
             <div class="card-body">
                 <div class="media align-items-center invoice-card" onclick="consultarRegistro('General')">
@@ -156,6 +152,7 @@
                         </div>
                     </div>
                     <canvas id="ingresos_por_hora"></canvas>
+                    
                 </div>
             </div>
         </div>
@@ -212,8 +209,8 @@
                 ]
             },
             options: {
-                responsive: false,
-                maintainAspectRatio: false,
+                responsive: true,
+                maintainAspectRatio: true,
                 plugins: {
                     legend: {
                         position: 'top',

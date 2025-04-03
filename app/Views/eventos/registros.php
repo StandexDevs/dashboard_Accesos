@@ -9,6 +9,29 @@
     <span class="fs-14 text-primary" onclick="window.history.go(-1)">regresar</span>
 
 <?= $this->endSection()?>
+<style>
+    [data-theme-version="dark"] .previous-transactions th {
+        color: white;
+    }
+
+    [data-theme-version="dark"] table.dataTable tbody td {
+        background-color: #1e2746 !important
+    }
+
+    [data-theme-version="dark"] .registros_table_length {
+        background-color: #1e2746 !important
+    }
+
+    
+
+    [data-theme-version="light"] .previous-transactions th {
+        color: black;
+    }    
+
+    [data-theme-version="light"] table.dataTable tbody td {
+        background-color:white
+    }
+</style>
     <div class="card">
         <div class="card-header d-block d-sm-flex border-0">
             <h4 class="fs-20 text-black">Bitacora <?php echo $tipoBitacora?></h4>
@@ -46,7 +69,9 @@
         }
     }
 
+
     $(document).ready(function () {
+        // Configuración inicial de DataTable
         $('#registros_table').DataTable({
             data:data_registros,
             columns: [
@@ -109,16 +134,23 @@
                 }
             ],
             language: {
-                search: "Buscar:",
-                lengthMenu: "Mostrar _MENU_ registros",
-                info: "Mostrando _START_ a _END_ de _TOTAL_ registros",
-                infoEmpty: "No hay registros disponibles",
-                emptyTable: "No hay datos en la tabla",
-                paginate: {
-                    first: "Primero",
-                    last: "Último",
-                    next: "Siguiente",
-                    previous: "Anterior"
+                "decimal": "",
+                "emptyTable": "No hay información",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+                "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+                "infoPostFix": "",
+                "thousands": ",",
+                "lengthMenu": "Mostrar _MENU_ Entradas",
+                "loadingRecords": "Cargando...",
+                "processing": "Procesando...",
+                "search": "Buscar:",
+                "zeroRecords": "Sin resultados encontrados",
+                "paginate": {
+                    "first": "Primero",
+                    "last": "Ultimo",
+                    "next": "Siguiente",
+                    "previous": "Anterior"
                 }
             },
         });
