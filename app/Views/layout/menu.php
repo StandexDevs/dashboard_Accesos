@@ -151,7 +151,7 @@
                                 <span class="nav-text">Salidas</span>
                             </a>
                         </li>
-                        <li>
+                        <li hidden>
                             <a href="<?= base_url('torniquetes/'); ?>" aria-expanded="false">
                                 <i class="bi bi-door-open-fill"></i>
                                 <span class="nav-text">Torniquetes</span>
