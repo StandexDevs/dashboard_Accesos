@@ -138,6 +138,7 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- jQuery -->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="<?= base_url('assets/js/pristine.js'); ?>"></script>
 
 	<script>
         let table;
@@ -488,10 +489,6 @@
             let selectedText = select.options[select.selectedIndex].text;
             formObject["nombre_evento"] = selectedText;
             formObject["sic_id"] = select.value;
-
-            // Enviar la petición a la API
-            console.log(formObject);
-            return;
 
             apiRequest(`${"<?= base_url('Eventos/guardar_evento'); ?>"}/${modo}`, "POST", formObject)
                 .then(data => {

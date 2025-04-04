@@ -206,8 +206,6 @@ class Eventos extends BaseController{
             return $this->response->setJSON(['success' => true, 'msg' => 'Evento guardado', 'data' => $update]);
         }
 
-		return $this->response->setJSON([$data, $modo]);
-
         do {
             $clave = generarClave();
             $intentos++;
